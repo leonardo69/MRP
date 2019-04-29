@@ -61,7 +61,7 @@ namespace Kurswork
 
         private void planningMRP_Click(object sender, EventArgs e)
         {
-            new MRP().Show();
+            new GUI.MRP().Show();
         }
 
         private void добавлениеЗаказаToolStripMenuItem_Click(object sender, EventArgs e)
