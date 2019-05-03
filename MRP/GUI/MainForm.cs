@@ -8,7 +8,7 @@ namespace MRP.GUI
         public MainForm()
         {
             InitializeComponent();
-            ThemeResolutionService.ApplicationThemeName = "Material";
+            ThemeResolutionService.ApplicationThemeName = "TelerikMetroBlue";
         }
 
 #region Forms
