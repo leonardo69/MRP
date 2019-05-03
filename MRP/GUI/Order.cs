@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Data;
-using System.Windows.Forms;
 using MRP.Core;
 
 namespace MRP.GUI
 {
-    public partial class Order : Form
+    public partial class Order : Telerik.WinControls.UI.RadForm
     {
         public Order()
         {

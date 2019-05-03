@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Data;
-using System.Windows.Forms;
 using MRP.Core;
 
 namespace MRP.GUI
 {
-    public partial class MainScheduler : Form
+    public partial class MainScheduler : Telerik.WinControls.UI.RadForm
     {
         public MainScheduler()
         {

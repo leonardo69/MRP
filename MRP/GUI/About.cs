@@ -1,8 +1,6 @@
-﻿using System.Windows.Forms;
-
-namespace MRP.GUI
+﻿namespace MRP.GUI
 {
-    public partial class About : Form
+    public partial class About : Telerik.WinControls.UI.RadForm
     {
         public About()
         {

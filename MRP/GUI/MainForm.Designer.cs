@@ -42,6 +42,8 @@
             this.store = new System.Windows.Forms.ToolStripMenuItem();
             this.time = new System.Windows.Forms.ToolStripMenuItem();
             this.lotSize = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+            this.добавлениеЗаказаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.просмотретьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.planningMRP = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,22 +60,20 @@
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
-            this.добавлениеЗаказаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.materialTheme1 = new Telerik.WinControls.Themes.MaterialTheme();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 705);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 709);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1087, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1097, 22);
             this.statusStrip1.TabIndex = 0;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -92,7 +92,7 @@
             this.справкаToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1087, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1097, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -111,7 +111,7 @@
             this.specification.Name = "specification";
             this.specification.Size = new System.Drawing.Size(177, 22);
             this.specification.Text = "Структура изделия";
-            this.specification.Click += new System.EventHandler(this.specification_Click);
+            this.specification.Click += new System.EventHandler(this.Specification_Click);
             // 
             // toolStripSeparator4
             // 
@@ -123,7 +123,7 @@
             this.exit.Name = "exit";
             this.exit.Size = new System.Drawing.Size(177, 22);
             this.exit.Text = "Выход";
-            this.exit.Click += new System.EventHandler(this.exit_Click);
+            this.exit.Click += new System.EventHandler(this.Exit_Click);
             // 
             // создатьToolStripMenuItem
             // 
@@ -144,7 +144,7 @@
             this.mainProductPlanning.Name = "mainProductPlanning";
             this.mainProductPlanning.Size = new System.Drawing.Size(300, 22);
             this.mainProductPlanning.Text = "Главное производственое планирование";
-            this.mainProductPlanning.Click += new System.EventHandler(this.mainProductPlanning_Click);
+            this.mainProductPlanning.Click += new System.EventHandler(this.MainProductPlanning_Click);
             // 
             // toolStripSeparator3
             // 
@@ -156,21 +156,33 @@
             this.store.Name = "store";
             this.store.Size = new System.Drawing.Size(300, 22);
             this.store.Text = "Компоненты на складе";
-            this.store.Click += new System.EventHandler(this.store_Click);
+            this.store.Click += new System.EventHandler(this.Store_Click);
             // 
             // time
             // 
             this.time.Name = "time";
             this.time.Size = new System.Drawing.Size(300, 22);
             this.time.Text = "Время выполнения заказа";
-            this.time.Click += new System.EventHandler(this.time_Click);
+            this.time.Click += new System.EventHandler(this.Time_Click);
             // 
             // lotSize
             // 
             this.lotSize.Name = "lotSize";
             this.lotSize.Size = new System.Drawing.Size(300, 22);
             this.lotSize.Text = "Объём партии";
-            this.lotSize.Click += new System.EventHandler(this.lotSize_Click);
+            this.lotSize.Click += new System.EventHandler(this.LotSize_Click);
+            // 
+            // toolStripSeparator7
+            // 
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
+            this.toolStripSeparator7.Size = new System.Drawing.Size(297, 6);
+            // 
+            // добавлениеЗаказаToolStripMenuItem
+            // 
+            this.добавлениеЗаказаToolStripMenuItem.Name = "добавлениеЗаказаToolStripMenuItem";
+            this.добавлениеЗаказаToolStripMenuItem.Size = new System.Drawing.Size(300, 22);
+            this.добавлениеЗаказаToolStripMenuItem.Text = "Добавление заказа";
+            this.добавлениеЗаказаToolStripMenuItem.Click += new System.EventHandler(this.ДобавлениеЗаказаToolStripMenuItem_Click);
             // 
             // просмотретьToolStripMenuItem
             // 
@@ -185,7 +197,7 @@
             this.planningMRP.Name = "planningMRP";
             this.planningMRP.Size = new System.Drawing.Size(184, 22);
             this.planningMRP.Text = "Планирование MRP";
-            this.planningMRP.Click += new System.EventHandler(this.planningMRP_Click);
+            this.planningMRP.Click += new System.EventHandler(this.PlanningMRP_Click);
             // 
             // справкаToolStripMenuItem
             // 
@@ -200,7 +212,7 @@
             this.about.Name = "about";
             this.about.Size = new System.Drawing.Size(149, 22);
             this.about.Text = "О программе";
-            this.about.Click += new System.EventHandler(this.about_Click);
+            this.about.Click += new System.EventHandler(this.About_Click);
             // 
             // toolStrip1
             // 
@@ -219,7 +231,7 @@
             this.toolStripButton5});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1087, 40);
+            this.toolStrip1.Size = new System.Drawing.Size(1097, 40);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -233,7 +245,7 @@
             this.toolStripButton2.Name = "toolStripButton2";
             this.toolStripButton2.Size = new System.Drawing.Size(36, 36);
             this.toolStripButton2.Text = "Структура изделия";
-            this.toolStripButton2.Click += new System.EventHandler(this.specification_Click);
+            this.toolStripButton2.Click += new System.EventHandler(this.Specification_Click);
             // 
             // toolStripSeparator1
             // 
@@ -250,7 +262,7 @@
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(36, 36);
             this.toolStripButton1.Text = "Главное производственное планирование";
-            this.toolStripButton1.Click += new System.EventHandler(this.mainProductPlanning_Click);
+            this.toolStripButton1.Click += new System.EventHandler(this.MainProductPlanning_Click);
             // 
             // toolStripSeparator6
             // 
@@ -267,7 +279,7 @@
             this.toolStripButton3.Name = "toolStripButton3";
             this.toolStripButton3.Size = new System.Drawing.Size(36, 36);
             this.toolStripButton3.Text = "Компоненты на складе";
-            this.toolStripButton3.Click += new System.EventHandler(this.store_Click);
+            this.toolStripButton3.Click += new System.EventHandler(this.Store_Click);
             // 
             // toolStripButton6
             // 
@@ -279,7 +291,7 @@
             this.toolStripButton6.Name = "toolStripButton6";
             this.toolStripButton6.Size = new System.Drawing.Size(36, 36);
             this.toolStripButton6.Text = "Время выполнения заказа";
-            this.toolStripButton6.Click += new System.EventHandler(this.time_Click);
+            this.toolStripButton6.Click += new System.EventHandler(this.Time_Click);
             // 
             // toolStripButton7
             // 
@@ -291,7 +303,7 @@
             this.toolStripButton7.Name = "toolStripButton7";
             this.toolStripButton7.Size = new System.Drawing.Size(36, 36);
             this.toolStripButton7.Text = "Объём партии";
-            this.toolStripButton7.Click += new System.EventHandler(this.lotSize_Click);
+            this.toolStripButton7.Click += new System.EventHandler(this.LotSize_Click);
             // 
             // toolStripSeparator2
             // 
@@ -308,7 +320,7 @@
             this.toolStripButton4.Name = "toolStripButton4";
             this.toolStripButton4.Size = new System.Drawing.Size(36, 36);
             this.toolStripButton4.Text = "Планирование MRP";
-            this.toolStripButton4.Click += new System.EventHandler(this.planningMRP_Click);
+            this.toolStripButton4.Click += new System.EventHandler(this.PlanningMRP_Click);
             // 
             // toolStripSeparator5
             // 
@@ -325,55 +337,34 @@
             this.toolStripButton5.Name = "toolStripButton5";
             this.toolStripButton5.Size = new System.Drawing.Size(36, 36);
             this.toolStripButton5.Text = "О программе";
-            this.toolStripButton5.Click += new System.EventHandler(this.about_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(174, 86);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(736, 616);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            // 
-            // toolStripSeparator7
-            // 
-            this.toolStripSeparator7.Name = "toolStripSeparator7";
-            this.toolStripSeparator7.Size = new System.Drawing.Size(297, 6);
-            // 
-            // добавлениеЗаказаToolStripMenuItem
-            // 
-            this.добавлениеЗаказаToolStripMenuItem.Name = "добавлениеЗаказаToolStripMenuItem";
-            this.добавлениеЗаказаToolStripMenuItem.Size = new System.Drawing.Size(300, 22);
-            this.добавлениеЗаказаToolStripMenuItem.Text = "Добавление заказа";
-            this.добавлениеЗаказаToolStripMenuItem.Click += new System.EventHandler(this.добавлениеЗаказаToolStripMenuItem_Click);
+            this.toolStripButton5.Click += new System.EventHandler(this.About_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(1087, 727);
-            this.Controls.Add(this.pictureBox1);
+            this.ClientSize = new System.Drawing.Size(1097, 731);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
+            // 
+            // 
+            // 
+            this.RootElement.ApplyShapeToControl = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Автоматизированная система MRP продажи душевых кабин";
+            this.Text = "Автоматизированная система MRP для планирования производства";
+            this.ThemeName = "Material";
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -410,9 +401,9 @@
         private System.Windows.Forms.ToolStripButton toolStripButton6;
         private System.Windows.Forms.ToolStripButton toolStripButton7;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
         private System.Windows.Forms.ToolStripMenuItem добавлениеЗаказаToolStripMenuItem;
+        private Telerik.WinControls.Themes.MaterialTheme materialTheme1;
     }
 }
 

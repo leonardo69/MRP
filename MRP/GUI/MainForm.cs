@@ -1,62 +1,63 @@
 ﻿using System;
-using System.Windows.Forms;
+using Telerik.WinControls;
 
 namespace MRP.GUI
 {
-    public partial class MainForm : Form
+    public partial class MainForm : Telerik.WinControls.UI.RadForm
     {
         public MainForm()
         {
             InitializeComponent();
+            ThemeResolutionService.ApplicationThemeName = "Material";
         }
 
 #region Forms
 
-        private void exit_Click(object sender, EventArgs e)
+        private void Exit_Click(object sender, EventArgs e)
         {
             Close();
         }
 
 
 
-        private void about_Click(object sender, EventArgs e)
+        private void About_Click(object sender, EventArgs e)
         {
             new About().Show();
         }
 
 #endregion
 
-        private void specification_Click(object sender, EventArgs e)
+        private void Specification_Click(object sender, EventArgs e)
         {
             new Specification().Show();
         }
 
-        private void mainProductPlanning_Click(object sender, EventArgs e)
+        private void MainProductPlanning_Click(object sender, EventArgs e)
         {
             new MainScheduler().Show();
         }
 
-        private void store_Click(object sender, EventArgs e)
+        private void Store_Click(object sender, EventArgs e)
         {
             new Store().Show();
         }
 
-        private void time_Click(object sender, EventArgs e)
+        private void Time_Click(object sender, EventArgs e)
         {
             new TimeProduction().Show();
         }
 
-        private void lotSize_Click(object sender, EventArgs e)
+        private void LotSize_Click(object sender, EventArgs e)
         {
             new LotSizeComponent().Show();
         }
 
-        private void planningMRP_Click(object sender, EventArgs e)
+        private void PlanningMRP_Click(object sender, EventArgs e)
         {
             new Mrp().Show();
         }
 
-        private void добавлениеЗаказаToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ДобавлениеЗаказаToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new Order().Show();
         }

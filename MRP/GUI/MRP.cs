@@ -5,7 +5,7 @@ using MRP.Model;
 
 namespace MRP.GUI
 {
-    public partial class Mrp : Form
+    public partial class Mrp : Telerik.WinControls.UI.RadForm
     {
         private Manager _manager;
         private List<ComponentReport> _reportComponent;

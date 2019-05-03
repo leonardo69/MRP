@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Windows.Forms;
 using MRP.Core;
 
 namespace MRP.GUI
 {
-    public partial class LotSizeComponent : Form
+    public partial class LotSizeComponent : Telerik.WinControls.UI.RadForm
     {
         public LotSizeComponent()
         {
@@ -17,7 +16,7 @@ namespace MRP.GUI
             var loadQuery = "SELECT Объём_партии.Код, Компоненты.Наименование, Объём_партии.Обозначение "
                             + "FROM Компоненты INNER JOIN Объём_партии ON Компоненты.ID = Объём_партии.Id_компонента;";
             var table = DbAccess.ExecuteDataTable(loadQuery);
-            dataGridView1.DataSource = table;
+            radGridView1.DataSource = table;
 
             textBox1.Text = table.Rows[0][2].ToString();
             textBox2.Text = table.Rows[1][2].ToString();

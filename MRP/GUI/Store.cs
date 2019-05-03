@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Windows.Forms;
 using MRP.Core;
 
 namespace MRP.GUI
 {
-    public partial class Store : Form
+    public partial class Store : Telerik.WinControls.UI.RadForm
     {
         public Store()
         {
