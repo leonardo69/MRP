@@ -1,4 +1,4 @@
-﻿namespace Kurswork.GUI
+﻿namespace MRP.GUI
 {
     partial class About
     {
@@ -41,9 +41,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(163, 11);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(162, 39);
+            this.label1.Size = new System.Drawing.Size(163, 39);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Автоматизированная система\r\nMRP для продажи душевых\r\nкабинок";
+            this.label1.Text = "Автоматизированная система\r\nMRP для планирования разра-\r\nботки изделий";
             // 
             // pictureBox1
             // 
@@ -60,15 +60,15 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(162, 87);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(163, 13);
+            this.label2.Size = new System.Drawing.Size(190, 13);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Разработала: Анна Овсянкина";
+            this.label2.Text = "Разработала: Екатерина Кузнецова";
             // 
             // About
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(342, 170);
+            this.ClientSize = new System.Drawing.Size(359, 170);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);

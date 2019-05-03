@@ -1,15 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Kurswork.GUI;
 
-namespace Kurswork
+namespace MRP.GUI
 {
     public partial class MainForm : Form
     {
@@ -22,7 +14,7 @@ namespace Kurswork
 
         private void exit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
 
@@ -41,7 +33,7 @@ namespace Kurswork
 
         private void mainProductPlanning_Click(object sender, EventArgs e)
         {
-            new MainSheduler().Show();
+            new MainScheduler().Show();
         }
 
         private void store_Click(object sender, EventArgs e)
@@ -61,7 +53,7 @@ namespace Kurswork
 
         private void planningMRP_Click(object sender, EventArgs e)
         {
-            new GUI.MRP().Show();
+            new Mrp().Show();
         }
 
         private void добавлениеЗаказаToolStripMenuItem_Click(object sender, EventArgs e)

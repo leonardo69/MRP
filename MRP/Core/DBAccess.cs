@@ -1,18 +1,15 @@
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Configuration;
 using System.Data;
 using System.Data.OleDb;
-using System.IO;
 
-namespace Core
+namespace MRP.Core
 {
-    static class DBAccess
+    static class DbAccess
     {
-        static OleDbConnection connection = null;
+        static OleDbConnection connection;
 
-        static DBAccess()
+        static DbAccess()
         {
 
             string connString = ConfigurationManager.AppSettings["ConnectionString"];
@@ -25,14 +22,10 @@ namespace Core
             try
             {
                 connection.Open();
-                OleDbDataAdapter adapter = new OleDbDataAdapter(sql, connection);
-                DataSet ds = new DataSet();
+                var adapter = new OleDbDataAdapter(sql, connection);
+                var ds = new DataSet();
                 adapter.Fill(ds);
                 return ds.Tables[0];
-            }
-            catch (Exception ex)
-            {
-                throw ex;
             }
             finally
             {
@@ -48,10 +41,6 @@ namespace Core
                 OleDbCommand command = new OleDbCommand(sql, connection);
                 command.ExecuteNonQuery();
             }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
             finally
             {
                 connection.Close();
@@ -66,10 +55,6 @@ namespace Core
                 OleDbCommand command = new OleDbCommand(sql, connection);
                 object result = command.ExecuteScalar();
                 return Convert.ToInt32(result);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
             }
             finally
             {
@@ -89,10 +74,6 @@ namespace Core
                     result = Convert.ToString(reader[0]);
                 return result;
             }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
             finally
             {
                 connection.Close();
@@ -107,7 +88,7 @@ namespace Core
                 connection.Close();
                 return true;
             }
-            catch (System.Exception)
+            catch (Exception)
             {
                 return false;
             }

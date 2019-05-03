@@ -67,11 +67,11 @@
     <Compile Include="GUI\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\MainSheduler.cs">
+    <Compile Include="GUI\MainSсheduler.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\MainSheduler.Designer.cs">
-      <DependentUpon>MainSheduler.cs</DependentUpon>
+    <Compile Include="GUI\MainSсheduler.Designer.cs">
+      <DependentUpon>MainSсheduler.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\MRP.cs">
       <SubType>Form</SubType>
@@ -119,8 +119,8 @@
     <EmbeddedResource Include="GUI\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\MainSheduler.resx">
-      <DependentUpon>MainSheduler.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\MainSсheduler.resx">
+      <DependentUpon>MainSсheduler.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\MRP.resx">
       <DependentUpon>MRP.cs</DependentUpon>
@@ -162,6 +162,9 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="BD.accdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Webalys-Kameleon.pics-Money-Graph.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

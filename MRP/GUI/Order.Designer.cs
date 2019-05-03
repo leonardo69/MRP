@@ -1,4 +1,4 @@
-﻿namespace Kurswork.GUI
+﻿namespace MRP.GUI
 {
     partial class Order
     {

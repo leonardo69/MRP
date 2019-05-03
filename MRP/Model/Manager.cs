@@ -1,128 +1,104 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Core;
-using System.Data;
+﻿using System.Collections.Generic;
+using Kurswork.Model;
+using MRP.Core;
 
-namespace Kurswork.Model
+namespace MRP.Model
 {
-    class Manager
+    internal class Manager
     {
+        private ComponentPlanning _componentA;
+        private ComponentPlanning _componentB;
+        private ComponentPlanning _componentC;
+        private ComponentPlanning _componentD;
 
-        ComponentPlanning componentA;
-        ComponentPlanning componentB;
-        ComponentPlanning componentC;
-        ComponentPlanning componentD;
 
-
-        public void LoadDataFromDB()
+        public void LoadDataFromDb()
         {
-            componentA = new ComponentPlanning("Душевая кабина");
-            componentB = new ComponentPlanning("Каркас со стенками");
-            componentC = new ComponentPlanning("Ручной душ");
-            componentD = new ComponentPlanning("Смеситель");
+            _componentA = new ComponentPlanning("Душевая кабина");
+            _componentB = new ComponentPlanning("Каркас со стенками");
+            _componentC = new ComponentPlanning("Ручной душ");
+            _componentD = new ComponentPlanning("Смеситель");
 
-            componentA.IsMain = true;
-            
-            componentB.IsMain = false;
-            componentB.ComponentParent = componentA;
+            _componentA.IsMain = true;
 
-            componentC.IsMain = false;
-            componentC.ComponentParent = componentA;
+            _componentB.IsMain = false;
+            _componentB.ComponentParent = _componentA;
 
-            componentD.IsMain = false;
-            componentD.ComponentParent = componentC;
+            _componentC.IsMain = false;
+            _componentC.ComponentParent = _componentA;
 
-            InitMainPlan(componentA);
-            InitStore(componentA, componentB, componentC, componentD);
-            InitLeadTime(componentA, componentB, componentC, componentD);
-            InitLotSize(componentA, componentB, componentC, componentD);
+            _componentD.IsMain = false;
+            _componentD.ComponentParent = _componentC;
 
-
-
+            InitMainPlan(_componentA);
+            InitStore(_componentA, _componentB, _componentC, _componentD);
+            InitLeadTime(_componentA, _componentB, _componentC, _componentD);
+            InitLotSize(_componentA, _componentB, _componentC, _componentD);
         }
 
         private void InitLotSize(params ComponentPlanning[] components)
         {
-            string loadLotSize = "SELECT Объём_партии.Обозначение FROM Объём_партии;";
-            DataTable table = DBAccess.ExecuteDataTable(loadLotSize);
+            var loadLotSize = "SELECT Объём_партии.Обозначение FROM Объём_партии;";
+            var table = DbAccess.ExecuteDataTable(loadLotSize);
 
-            for (int i = 0; i < 4;i++ )
-                components[i].lotSize = table.Rows[i][0].ToString();
-            
+            for (var i = 0; i < 4; i++)
+                components[i].LotSize = table.Rows[i][0].ToString();
         }
 
         private void InitLeadTime(params ComponentPlanning[] components)
         {
-            string loadLeadTime = "SELECT Время_выполнения_заказа.Время FROM Время_выполнения_заказа;";
-            DataTable table = DBAccess.ExecuteDataTable(loadLeadTime);
+            var loadLeadTime = "SELECT Время_выполнения_заказа.Время FROM Время_выполнения_заказа;";
+            var table = DbAccess.ExecuteDataTable(loadLeadTime);
 
-            for (int i = 0; i < 4; i++)
-                components[i].leadTime = int.Parse(table.Rows[i][0].ToString());
-
+            for (var i = 0; i < 4; i++)
+                components[i].LeadTime = int.Parse(table.Rows[i][0].ToString());
         }
 
         private void InitStore(params ComponentPlanning[] components)
         {
-            string loadStoreData = "SELECT Склад.Кол_компонента FROM Склад;";
-            DataTable table = DBAccess.ExecuteDataTable(loadStoreData);
-            for (int i = 0; i < 4; i++)
-                components[i].startAvailableBalance = int.Parse(table.Rows[i][0].ToString());
+            var loadStoreData = "SELECT Склад.Кол_компонента FROM Склад;";
+            var table = DbAccess.ExecuteDataTable(loadStoreData);
+            for (var i = 0; i < 4; i++)
+                components[i].StartAvailableBalance = int.Parse(table.Rows[i][0].ToString());
         }
 
-        
+
         private void InitMainPlan(ComponentPlanning componentA)
         {
-            string mainPlanQuery = "SELECT Глав_производ_план.Неделя1, Глав_производ_план.Неделя2, Глав_производ_план.Неделя3, Глав_производ_план.Неделя4, "
-            + "Глав_производ_план.Неделя5, Глав_производ_план.Неделя6, Глав_производ_план.Неделя7, Глав_производ_план.Неделя8, Глав_производ_план.Неделя9 "
-            + "FROM Глав_производ_план WHERE (((Глав_производ_план.ID_компонента)=1));";
-            DataTable table = DBAccess.ExecuteDataTable(mainPlanQuery);
+            var mainPlanQuery =
+                "SELECT Глав_производ_план.Неделя1, Глав_производ_план.Неделя2, Глав_производ_план.Неделя3, Глав_производ_план.Неделя4, "
+                + "Глав_производ_план.Неделя5, Глав_производ_план.Неделя6, Глав_производ_план.Неделя7, Глав_производ_план.Неделя8, Глав_производ_план.Неделя9 "
+                + "FROM Глав_производ_план WHERE (((Глав_производ_план.ID_компонента)=1));";
+            var table = DbAccess.ExecuteDataTable(mainPlanQuery);
 
-            for (int i = 0; i < 9; i++)
-            {
-                componentA.weeks[i].grossRequirements = int.Parse(table.Rows[0][i].ToString());
-            }
-
+            for (var i = 0; i < 9; i++) componentA.Weeks[i].GrossRequirements = int.Parse(table.Rows[0][i].ToString());
         }
-
-        
 
 
         public void AnalyseData()
         {
-            
-            componentA.MakeCalculation();
-            SetupGrossRequirements(componentB);
-            componentB.MakeCalculation();
-            SetupGrossRequirements(componentC);
-            componentC.MakeCalculation();
-            SetupGrossRequirements(componentD);
-            componentD.MakeCalculation();
-
-           
+            _componentA.MakeCalculation();
+            SetupGrossRequirements(_componentB);
+            _componentB.MakeCalculation();
+            SetupGrossRequirements(_componentC);
+            _componentC.MakeCalculation();
+            SetupGrossRequirements(_componentD);
+            _componentD.MakeCalculation();
         }
 
         public List<ComponentReport> MakeReport()
         {
+            var comps = new List<ComponentPlanning> {_componentA, _componentB, _componentC, _componentD};
+            var report = new Report();
+            var results = report.GetReport(comps);
 
-            List<ComponentPlanning> comps  = new List<ComponentPlanning>() {componentA, componentB, componentC, componentD};
-            Report report = new Report();
-            List<ComponentReport> results = report.GetReport(comps);
-            
             return results;
-
         }
 
         private void SetupGrossRequirements(ComponentPlanning component)
         {
-            ComponentPlanning parent = component.ComponentParent;
-            for(int i=0;i<9; i++)
-            {
-                component.weeks[i].grossRequirements = parent.weeks[i].plannedOrderReleases;
-            }
+            var parent = component.ComponentParent;
+            for (var i = 0; i < 9; i++) component.Weeks[i].GrossRequirements = parent.Weeks[i].PlannedOrderReleases;
         }
-
     }
 }

@@ -1,24 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using Kurswork.Model;
 
-namespace Kurswork.Model
+namespace MRP.Model
 {
     class ComponentPlanning
     {
-        public string nameComponent { get; set;}
+        public string NameComponent { get; set;}
 
 
         //MRP требование
-        public string lotSize { get; set;}
+        public string LotSize { get; set;}
 
-        public int leadTime { get; set; }
+        public int LeadTime { get; set; }
 
-        public int startAvailableBalance { get; set;}
+        public int StartAvailableBalance { get; set;}
 
-        public List<WeekPlan> weeks { get; set; }
+        public List<WeekPlan> Weeks { get; set; }
 
         //структура
         public ComponentPlanning ComponentParent { get; set; }
@@ -28,11 +25,11 @@ namespace Kurswork.Model
 
         public ComponentPlanning(string componentName)
         {
-            weeks = new List<WeekPlan>();
+            Weeks = new List<WeekPlan>();
             for (int i = 0; i < 9; i++)
-            { weeks.Add(new WeekPlan()); }
+            { Weeks.Add(new WeekPlan()); }
 
-            nameComponent = componentName;
+            NameComponent = componentName;
         }
 
 
@@ -40,26 +37,26 @@ namespace Kurswork.Model
         {
 
             //cчитаем первую неделю
-            if (startAvailableBalance >= weeks[0].grossRequirements)
+            if (StartAvailableBalance >= Weeks[0].GrossRequirements)
             {
-                weeks[0].availableBalance = startAvailableBalance - weeks[0].grossRequirements;
+                Weeks[0].AvailableBalance = StartAvailableBalance - Weeks[0].GrossRequirements;
             }else
             {
-                weeks[0].plannedOrderReceipts = weeks[0].grossRequirements - startAvailableBalance;
-                weeks[0].availableBalance = 0;
+                Weeks[0].PlannedOrderReceipts = Weeks[0].GrossRequirements - StartAvailableBalance;
+                Weeks[0].AvailableBalance = 0;
             }
 
             //считаем последующие недели
             for(int i=1;i<9;i++)
             {
-                if (weeks[i-1].availableBalance >= weeks[i].grossRequirements)
+                if (Weeks[i-1].AvailableBalance >= Weeks[i].GrossRequirements)
                 {
-                    weeks[i].availableBalance = weeks[i-1].availableBalance-weeks[i].grossRequirements;
+                    Weeks[i].AvailableBalance = Weeks[i-1].AvailableBalance-Weeks[i].GrossRequirements;
                 }
                 else
                 {
-                    weeks[i].plannedOrderReceipts = weeks[i].grossRequirements - weeks[i - 1].availableBalance;
-                    weeks[i].availableBalance = 0;
+                    Weeks[i].PlannedOrderReceipts = Weeks[i].GrossRequirements - Weeks[i - 1].AvailableBalance;
+                    Weeks[i].AvailableBalance = 0;
                 }
 
             }
@@ -69,11 +66,11 @@ namespace Kurswork.Model
             for (int i=0; i< 9;i++)
             {
                 //проверить на вшивость
-                if(weeks[i].plannedOrderReceipts!=0)
+                if(Weeks[i].PlannedOrderReceipts!=0)
                 {
-                    if (i - leadTime >= 0)
+                    if (i - LeadTime >= 0)
                     {
-                        weeks[i - leadTime].plannedOrderReleases = weeks[i].plannedOrderReceipts;
+                        Weeks[i - LeadTime].PlannedOrderReleases = Weeks[i].PlannedOrderReceipts;
                     }
                 }
             }

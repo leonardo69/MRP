@@ -1,15 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Core;
+using MRP.Core;
 
-namespace Kurswork.GUI
+namespace MRP.GUI
 {
     public partial class TimeProduction : Form
     {
@@ -23,7 +17,7 @@ namespace Kurswork.GUI
         {
             string loadQuery = "SELECT Время_выполнения_заказа.ID, Компоненты.Наименование, Время_выполнения_заказа.Время "
             +"FROM Компоненты INNER JOIN Время_выполнения_заказа ON Компоненты.ID = Время_выполнения_заказа.ID_компонента;";
-            DataTable table = DBAccess.ExecuteDataTable(loadQuery);
+            DataTable table = DbAccess.ExecuteDataTable(loadQuery);
             dataGridView1.DataSource = table;
 
             textBox1.Text = table.Rows[0][2].ToString();
@@ -43,8 +37,8 @@ namespace Kurswork.GUI
 
         private void UpdateData(int id, string volume)
         {
-            string updateQuery = "UPDATE Время_выполнения_заказа SET Время_выполнения_заказа.Время = " + volume + " WHERE (((Время_выполнения_заказа.ID_компонента)=" + id.ToString() + "));";
-            DBAccess.ExecuteNonQuery(updateQuery);
+            var updateQuery = "UPDATE Время_выполнения_заказа SET Время_выполнения_заказа.Время = " + volume + " WHERE (((Время_выполнения_заказа.ID_компонента)=" + id + "));";
+            DbAccess.ExecuteNonQuery(updateQuery);
         }
     }
 }

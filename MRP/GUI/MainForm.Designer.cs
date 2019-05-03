@@ -1,4 +1,4 @@
-﻿namespace Kurswork
+﻿namespace MRP.GUI
 {
     partial class MainForm
     {

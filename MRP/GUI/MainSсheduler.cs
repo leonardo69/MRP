@@ -1,19 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Core;
+using MRP.Core;
 
-namespace Kurswork.GUI
+namespace MRP.GUI
 {
-    public partial class MainSheduler : Form
+    public partial class MainScheduler : Form
     {
-        public MainSheduler()
+        public MainScheduler()
         {
             InitializeComponent();
             LoadData();
@@ -24,7 +18,7 @@ namespace Kurswork.GUI
             string selectQuery = "SELECT Глав_производ_план.Неделя1, Глав_производ_план.Неделя2, Глав_производ_план.Неделя3, Глав_производ_план.Неделя4, " +
                                 "Глав_производ_план.Неделя5, Глав_производ_план.Неделя6, Глав_производ_план.Неделя7, Глав_производ_план.Неделя8, " +
                                 "Глав_производ_план.Неделя9 FROM Глав_производ_план;";
-            DataTable table = DBAccess.ExecuteDataTable(selectQuery);
+            DataTable table = DbAccess.ExecuteDataTable(selectQuery);
             dataGridView1.DataSource = table;
 
             textBox1.Text = table.Rows[0][0].ToString();
@@ -43,7 +37,7 @@ namespace Kurswork.GUI
         {
             string updateQuery = "UPDATE Глав_производ_план SET Глав_производ_план.Неделя1 = "+textBox1.Text+", Глав_производ_план.Неделя2 = "+textBox2.Text+", Глав_производ_план.Неделя3 = "+textBox3.Text+", Глав_производ_план.Неделя4 = "+textBox4.Text+", Глав_производ_план.Неделя5 = "+textBox5.Text+", Глав_производ_план.Неделя6 = "+textBox6.Text+", Глав_производ_план.Неделя7 = "+textBox7.Text+", Глав_производ_план.Неделя8 = "+textBox8.Text+", Глав_производ_план.Неделя9 = "+textBox9.Text+" " 
             +"WHERE (((Глав_производ_план.ID_компонента)=1)); ";
-            DBAccess.ExecuteNonQuery(updateQuery);
+            DbAccess.ExecuteNonQuery(updateQuery);
             LoadData();
         }
     }

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using Kurswork.Model;
+using MRP.Model;
 
 namespace Kurswork.Model
 {
@@ -21,10 +22,10 @@ namespace Kurswork.Model
 
                 ComponentReport report = new ComponentReport();
                 report.Results = GetResultsInTable(component);
-                report.AvaibleBalance = component.startAvailableBalance.ToString();
-                report.Leadtime = component.leadTime.ToString();
-                report.NameComponent = component.nameComponent;
-                report.LotSize = component.lotSize;
+                report.AvailableBalance = component.StartAvailableBalance.ToString();
+                report.LeadTime = component.LeadTime.ToString();
+                report.NameComponent = component.NameComponent;
+                report.LotSize = component.LotSize;
 
                 results.Add(report);
             }
@@ -54,7 +55,7 @@ namespace Kurswork.Model
 
             for (int i = 0; i < 9; i++)
             {
-                workRow[i] = component.weeks[i].plannedOrderReleases.ToString();
+                workRow[i] = component.Weeks[i].PlannedOrderReleases.ToString();
             }
 
             table.Rows.Add(workRow);
@@ -66,7 +67,7 @@ namespace Kurswork.Model
 
             for (int i = 0; i < 9; i++)
             {
-                workRow[i] = component.weeks[i].availableBalance.ToString();
+                workRow[i] = component.Weeks[i].AvailableBalance.ToString();
             }
 
             table.Rows.Add(workRow);
@@ -79,7 +80,7 @@ namespace Kurswork.Model
 
             for(int i=0;i<9;i++)
             {
-                workRow[i] = component.weeks[i].grossRequirements.ToString();
+                workRow[i] = component.Weeks[i].GrossRequirements.ToString();
             }
 
             table.Rows.Add(workRow);
@@ -92,7 +93,7 @@ namespace Kurswork.Model
 
             for (int i = 0; i < 9; i++)
             {
-                workRow[i] = component.weeks[i].plannedOrderReceipts.ToString();
+                workRow[i] = component.Weeks[i].PlannedOrderReceipts.ToString();
             }
 
             table.Rows.Add(workRow);

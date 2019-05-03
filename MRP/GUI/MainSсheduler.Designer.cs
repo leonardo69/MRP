@@ -1,6 +1,6 @@
-﻿namespace Kurswork.GUI
+﻿namespace MRP.GUI
 {
-    partial class MainSheduler
+    partial class MainScheduler
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainSheduler));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainScheduler));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox9 = new System.Windows.Forms.TextBox();
@@ -246,7 +246,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(633, 82);
             this.dataGridView1.TabIndex = 1;
             // 
-            // MainSheduler
+            // MainScheduler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -256,7 +256,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "MainSheduler";
+            this.Name = "MainScheduler";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Главное производственное планирование";
             this.groupBox1.ResumeLayout(false);
