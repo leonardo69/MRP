@@ -1,4 +1,6 @@
 ﻿using System;
+using MRP.Admin;
+using MRP.Entities;
 using Telerik.WinControls;
 
 namespace MRP.GUI
@@ -8,8 +10,10 @@ namespace MRP.GUI
         public MainForm()
         {
             InitializeComponent();
-            // ThemeResolutionService.ApplicationThemeName = "TelerikMetroBlue";
             ribbonTab1.IsSelected = true;
+            //var creator = new DatabaseCreator();
+            //creator.Create();
+            setPermissionsForAdmin("Root");
         }
 
         private void radMenuItem1_Click(object sender, EventArgs e)
@@ -108,18 +112,17 @@ namespace MRP.GUI
 
         private void setUserPermission(object sender, LoginEventArgs e)
         {
-            // hide all
             resetUserPermission();
 
             switch (e.UserRole)
             {
-                case 1:
+                case Role.Manager:
                     setPermissionsForManager(e.UserName);
                     break;
-                case 2:
+                case Role.Client:
                     setPermissionsForClient(e.UserName);
                     break;
-                case 3:
+                case Role.Admin:
                     setPermissionsForAdmin(e.UserName);
                     break;
                 default:
@@ -182,6 +185,24 @@ namespace MRP.GUI
             //hide all tabs except about and authorization
             //hide start menu tabs
             resetUserPermission();
+        }
+
+        private void radButtonElement17_Click(object sender, EventArgs e)
+        {
+            var addUserForm = new AddUser();
+            addUserForm.Show();
+        }
+
+        private void radButtonElement18_Click(object sender, EventArgs e)
+        {
+            var deleteUserForm = new DeleteUser();
+            deleteUserForm.Show();
+        }
+
+        private void radButtonElement19_Click(object sender, EventArgs e)
+        {
+            var changeUserRoleForm = new ChangeUserRole();
+            changeUserRoleForm.Show();
         }
     }
 }

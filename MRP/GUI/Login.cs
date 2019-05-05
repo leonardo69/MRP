@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Linq;
+using System.Windows.Forms;
+using MRP.Entities;
 
 namespace MRP.GUI
 {
@@ -18,22 +21,35 @@ namespace MRP.GUI
 
         private void radButton1_Click(object sender, EventArgs e)
         {
-            var args = new LoginEventArgs
+            if (radTextBox1.Text.Length == 0 || radButton2.Text.Length == 0)
             {
-                UserName = "Alex",
-                UserRole = int.Parse(radTextBox1.Text)
-            };
+                MessageBox.Show(@"Введите логин и пароль");
+            }
 
-            OnUserAuthorized?.Invoke(this, args);
-            Close();
-            //login
-            // Close()
+            using (var db = new UserContext())
+            {
+                var foundUser = db.Users.FirstOrDefault(x => x.Name == radTextBox1.Text && x.Password == radTextBox2.Text);
+                if (foundUser == null)
+                {
+                    MessageBox.Show(@"Пользователь не найден");
+                    return;
+                }
+
+                var args = new LoginEventArgs
+                {
+                    UserName = foundUser.Name,
+                    UserRole = foundUser.Role
+                };
+
+                OnUserAuthorized?.Invoke(this, args);
+                Close();
+            }
         }
     }
 
     public class LoginEventArgs : EventArgs
     {
         public string UserName { get; set; }
-        public int UserRole { get; set; }
+        public Role UserRole { get; set; }
     }
 }
