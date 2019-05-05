@@ -43,6 +43,7 @@
             this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -50,10 +51,10 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 16);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 18);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(950, 189);
+            this.dataGridView1.Size = new System.Drawing.Size(950, 187);
             this.dataGridView1.TabIndex = 0;
             // 
             // groupBox1
@@ -91,7 +92,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(21, 67);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(162, 13);
+            this.label2.Size = new System.Drawing.Size(173, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "Компонент для планирования:";
             // 
@@ -110,7 +111,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(21, 113);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(105, 26);
+            this.label3.Size = new System.Drawing.Size(111, 26);
             this.label3.TabIndex = 6;
             this.label3.Text = "Время выполнения\r\nзаказа (недель):";
             // 
@@ -133,7 +134,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(21, 151);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(123, 26);
+            this.label4.Size = new System.Drawing.Size(131, 26);
             this.label4.TabIndex = 8;
             this.label4.Text = "Начальное количество\r\nна складе (шт):\r\n";
             // 
@@ -149,11 +150,11 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(23, 190);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(143, 13);
+            this.label6.Size = new System.Drawing.Size(148, 13);
             this.label6.TabIndex = 12;
             this.label6.Text = "Обьем партии заказа (шт):\r\n";
             // 
-            // MRP
+            // Mrp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -171,12 +172,17 @@
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "MRP";
+            this.Name = "Mrp";
+            // 
+            // 
+            // 
+            this.RootElement.ApplyShapeToControl = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Анализ MRP по компонентам";
             this.Load += new System.EventHandler(this.MRP_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

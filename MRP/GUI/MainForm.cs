@@ -8,7 +8,7 @@ namespace MRP.GUI
         public MainForm()
         {
             InitializeComponent();
-            //ThemeResolutionService.ApplicationThemeName = "TelerikMetroBlue";
+            // ThemeResolutionService.ApplicationThemeName = "TelerikMetroBlue";
         }
 
 #region Forms
@@ -160,6 +160,11 @@ namespace MRP.GUI
         private void radButtonElement1_Click(object sender, EventArgs e)
         {
             new Login().Show();
+        }
+
+        private void radMenuItem13_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
