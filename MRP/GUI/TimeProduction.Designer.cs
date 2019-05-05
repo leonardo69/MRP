@@ -150,14 +150,14 @@
             this.radGridView1.MasterTemplate.AllowEditRow = false;
             this.radGridView1.MasterTemplate.ViewDefinition = tableViewDefinition1;
             this.radGridView1.Name = "radGridView1";
-            this.radGridView1.Size = new System.Drawing.Size(369, 251);
+            this.radGridView1.Size = new System.Drawing.Size(369, 202);
             this.radGridView1.TabIndex = 3;
             // 
             // TimeProduction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(390, 462);
+            this.ClientSize = new System.Drawing.Size(390, 414);
             this.Controls.Add(this.radGridView1);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

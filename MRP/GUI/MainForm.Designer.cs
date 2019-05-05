@@ -29,327 +29,475 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.specification = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.exit = new System.Windows.Forms.ToolStripMenuItem();
-            this.создатьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mainProductPlanning = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.store = new System.Windows.Forms.ToolStripMenuItem();
-            this.time = new System.Windows.Forms.ToolStripMenuItem();
-            this.lotSize = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
-            this.добавлениеЗаказаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.просмотретьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.planningMRP = new System.Windows.Forms.ToolStripMenuItem();
-            this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.about = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.telerikMetroBlueTheme1 = new Telerik.WinControls.Themes.TelerikMetroBlueTheme();
-            this.statusStrip1.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
+            this.radStatusStrip1 = new Telerik.WinControls.UI.RadStatusStrip();
+            this.radRibbonBar1 = new Telerik.WinControls.UI.RadRibbonBar();
+            this.ribbonTab1 = new Telerik.WinControls.UI.RibbonTab();
+            this.radRibbonBarGroup1 = new Telerik.WinControls.UI.RadRibbonBarGroup();
+            this.radButtonElement1 = new Telerik.WinControls.UI.RadButtonElement();
+            this.radButtonElement11 = new Telerik.WinControls.UI.RadButtonElement();
+            this.ribbonTab2 = new Telerik.WinControls.UI.RibbonTab();
+            this.radRibbonBarGroup2 = new Telerik.WinControls.UI.RadRibbonBarGroup();
+            this.radButtonElement2 = new Telerik.WinControls.UI.RadButtonElement();
+            this.radButtonElement3 = new Telerik.WinControls.UI.RadButtonElement();
+            this.radRibbonBarGroup8 = new Telerik.WinControls.UI.RadRibbonBarGroup();
+            this.radRibbonBarGroup3 = new Telerik.WinControls.UI.RadRibbonBarGroup();
+            this.radButtonElement4 = new Telerik.WinControls.UI.RadButtonElement();
+            this.radRibbonBarGroup4 = new Telerik.WinControls.UI.RadRibbonBarGroup();
+            this.radButtonElement6 = new Telerik.WinControls.UI.RadButtonElement();
+            this.radButtonElement7 = new Telerik.WinControls.UI.RadButtonElement();
+            this.radButtonElement8 = new Telerik.WinControls.UI.RadButtonElement();
+            this.radRibbonBarGroup5 = new Telerik.WinControls.UI.RadRibbonBarGroup();
+            this.radButtonElement5 = new Telerik.WinControls.UI.RadButtonElement();
+            this.ribbonTab5 = new Telerik.WinControls.UI.RibbonTab();
+            this.radRibbonBarGroup7 = new Telerik.WinControls.UI.RadRibbonBarGroup();
+            this.radButtonElement10 = new Telerik.WinControls.UI.RadButtonElement();
+            this.ribbonTab4 = new Telerik.WinControls.UI.RibbonTab();
+            this.radRibbonBarGroup6 = new Telerik.WinControls.UI.RadRibbonBarGroup();
+            this.radButtonElement9 = new Telerik.WinControls.UI.RadButtonElement();
+            this.radMenuItem1 = new Telerik.WinControls.UI.RadMenuItem();
+            this.radMenuItem4 = new Telerik.WinControls.UI.RadMenuItem();
+            this.radMenuItem5 = new Telerik.WinControls.UI.RadMenuItem();
+            this.radMenuItem2 = new Telerik.WinControls.UI.RadMenuItem();
+            this.radMenuItem6 = new Telerik.WinControls.UI.RadMenuItem();
+            this.radMenuItem7 = new Telerik.WinControls.UI.RadMenuItem();
+            this.radMenuItem8 = new Telerik.WinControls.UI.RadMenuItem();
+            this.radMenuItem9 = new Telerik.WinControls.UI.RadMenuItem();
+            this.radMenuItem10 = new Telerik.WinControls.UI.RadMenuItem();
+            this.radMenuItem11 = new Telerik.WinControls.UI.RadMenuItem();
+            this.radMenuSeparatorItem2 = new Telerik.WinControls.UI.RadMenuSeparatorItem();
+            this.radMenuItem12 = new Telerik.WinControls.UI.RadMenuItem();
+            this.radMenuSeparatorItem1 = new Telerik.WinControls.UI.RadMenuSeparatorItem();
+            this.radMenuItem3 = new Telerik.WinControls.UI.RadMenuItem();
+            this.radRibbonFormBehavior1 = new Telerik.WinControls.UI.RadRibbonFormBehavior();
+            this.radButtonElement12 = new Telerik.WinControls.UI.RadButtonElement();
+            this.radButtonElement13 = new Telerik.WinControls.UI.RadButtonElement();
+            this.radButtonElement14 = new Telerik.WinControls.UI.RadButtonElement();
+            this.radButtonElement15 = new Telerik.WinControls.UI.RadButtonElement();
+            this.radRibbonBarGroup9 = new Telerik.WinControls.UI.RadRibbonBarGroup();
+            this.radButtonElement16 = new Telerik.WinControls.UI.RadButtonElement();
+            this.ribbonTab6 = new Telerik.WinControls.UI.RibbonTab();
+            this.radRibbonBarGroup10 = new Telerik.WinControls.UI.RadRibbonBarGroup();
+            this.radButtonElement17 = new Telerik.WinControls.UI.RadButtonElement();
+            ((System.ComponentModel.ISupportInitialize)(this.radStatusStrip1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radRibbonBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
-            // statusStrip1
+            // radStatusStrip1
             // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 709);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1099, 22);
-            this.statusStrip1.TabIndex = 0;
-            this.statusStrip1.Text = "statusStrip1";
+            this.radStatusStrip1.Location = new System.Drawing.Point(0, 682);
+            this.radStatusStrip1.Name = "radStatusStrip1";
+            this.radStatusStrip1.Size = new System.Drawing.Size(1103, 26);
+            this.radStatusStrip1.TabIndex = 3;
             // 
-            // toolStripStatusLabel1
+            // radRibbonBar1
             // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(115, 17);
-            this.toolStripStatusLabel1.Text = "Добро пожаловать!";
+            this.radRibbonBar1.CommandTabs.AddRange(new Telerik.WinControls.RadItem[] {
+            this.ribbonTab1,
+            this.ribbonTab2,
+            this.ribbonTab5,
+            this.ribbonTab6,
+            this.ribbonTab4});
             // 
-            // menuStrip1
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.файлToolStripMenuItem,
-            this.создатьToolStripMenuItem,
-            this.просмотретьToolStripMenuItem,
-            this.справкаToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1099, 24);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
             // 
-            // файлToolStripMenuItem
+            this.radRibbonBar1.ExitButton.Text = "Exit";
+            this.radRibbonBar1.ExitButton.Visibility = Telerik.WinControls.ElementVisibility.Hidden;
+            this.radRibbonBar1.Location = new System.Drawing.Point(0, 0);
+            this.radRibbonBar1.Name = "radRibbonBar1";
             // 
-            this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.specification,
-            this.toolStripSeparator4,
-            this.exit});
-            this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
-            this.файлToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
-            this.файлToolStripMenuItem.Text = "Файл";
             // 
-            // specification
             // 
-            this.specification.Name = "specification";
-            this.specification.Size = new System.Drawing.Size(177, 22);
-            this.specification.Text = "Структура изделия";
-            this.specification.Click += new System.EventHandler(this.Specification_Click);
+            this.radRibbonBar1.OptionsButton.Text = "Options";
+            this.radRibbonBar1.ShowExpandButton = false;
+            this.radRibbonBar1.Size = new System.Drawing.Size(1103, 174);
+            this.radRibbonBar1.StartMenuItems.AddRange(new Telerik.WinControls.RadItem[] {
+            this.radMenuItem1,
+            this.radMenuItem2,
+            this.radMenuItem7,
+            this.radMenuSeparatorItem1,
+            this.radMenuItem3});
+            this.radRibbonBar1.TabIndex = 4;
+            this.radRibbonBar1.Text = "Автоматизированная система MRP для планирования производства";
+            this.radRibbonBar1.ThemeName = "ControlDefault";
+            ((Telerik.WinControls.UI.RadRibbonBarElement)(this.radRibbonBar1.GetChildAt(0))).Text = "Автоматизированная система MRP для планирования производства";
+            ((Telerik.WinControls.UI.RadToggleButtonElement)(this.radRibbonBar1.GetChildAt(0).GetChildAt(6).GetChildAt(0))).Visibility = Telerik.WinControls.ElementVisibility.Hidden;
             // 
-            // toolStripSeparator4
+            // ribbonTab1
             // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(174, 6);
+            this.ribbonTab1.IsSelected = true;
+            this.ribbonTab1.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.radRibbonBarGroup1});
+            this.ribbonTab1.Name = "ribbonTab1";
+            this.ribbonTab1.Text = "Авторизация";
+            this.ribbonTab1.UseMnemonic = false;
             // 
-            // exit
+            // radRibbonBarGroup1
             // 
-            this.exit.Name = "exit";
-            this.exit.Size = new System.Drawing.Size(177, 22);
-            this.exit.Text = "Выход";
-            this.exit.Click += new System.EventHandler(this.Exit_Click);
+            this.radRibbonBarGroup1.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.radButtonElement1,
+            this.radButtonElement11});
+            this.radRibbonBarGroup1.Name = "radRibbonBarGroup1";
+            this.radRibbonBarGroup1.Text = "Доступ";
             // 
-            // создатьToolStripMenuItem
+            // radButtonElement1
             // 
-            this.создатьToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mainProductPlanning,
-            this.toolStripSeparator3,
-            this.store,
-            this.time,
-            this.lotSize,
-            this.toolStripSeparator7,
-            this.добавлениеЗаказаToolStripMenuItem});
-            this.создатьToolStripMenuItem.Name = "создатьToolStripMenuItem";
-            this.создатьToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
-            this.создатьToolStripMenuItem.Text = "Создать";
+            this.radButtonElement1.Alignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.radButtonElement1.AutoSize = false;
+            this.radButtonElement1.Bounds = new System.Drawing.Rectangle(0, 0, 76, 76);
+            this.radButtonElement1.DisplayStyle = Telerik.WinControls.DisplayStyle.ImageAndText;
+            this.radButtonElement1.Image = ((System.Drawing.Image)(resources.GetObject("radButtonElement1.Image")));
+            this.radButtonElement1.ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
+            this.radButtonElement1.Name = "radButtonElement1";
+            this.radButtonElement1.Text = "Войти";
+            this.radButtonElement1.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
+            this.radButtonElement1.ToolTipText = "Войти";
+            this.radButtonElement1.Click += new System.EventHandler(this.radButtonElement1_Click);
             // 
-            // mainProductPlanning
+            // radButtonElement11
             // 
-            this.mainProductPlanning.Name = "mainProductPlanning";
-            this.mainProductPlanning.Size = new System.Drawing.Size(300, 22);
-            this.mainProductPlanning.Text = "Главное производственое планирование";
-            this.mainProductPlanning.Click += new System.EventHandler(this.MainProductPlanning_Click);
+            this.radButtonElement11.AutoSize = false;
+            this.radButtonElement11.Bounds = new System.Drawing.Rectangle(0, 0, 76, 76);
+            this.radButtonElement11.Image = ((System.Drawing.Image)(resources.GetObject("radButtonElement11.Image")));
+            this.radButtonElement11.ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
+            this.radButtonElement11.Name = "radButtonElement11";
+            this.radButtonElement11.Text = "Выйти";
+            this.radButtonElement11.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             // 
-            // toolStripSeparator3
+            // ribbonTab2
             // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(297, 6);
+            this.ribbonTab2.IsSelected = false;
+            this.ribbonTab2.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.radRibbonBarGroup2,
+            this.radRibbonBarGroup8,
+            this.radRibbonBarGroup9});
+            this.ribbonTab2.Name = "ribbonTab2";
+            this.ribbonTab2.Text = "Анализ";
+            this.ribbonTab2.UseMnemonic = false;
             // 
-            // store
+            // radRibbonBarGroup2
             // 
-            this.store.Name = "store";
-            this.store.Size = new System.Drawing.Size(300, 22);
-            this.store.Text = "Компоненты на складе";
-            this.store.Click += new System.EventHandler(this.Store_Click);
+            this.radRibbonBarGroup2.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.radButtonElement2,
+            this.radButtonElement3});
+            this.radRibbonBarGroup2.Name = "radRibbonBarGroup2";
+            this.radRibbonBarGroup2.Text = "Создание структуры изделия";
             // 
-            // time
+            // radButtonElement2
             // 
-            this.time.Name = "time";
-            this.time.Size = new System.Drawing.Size(300, 22);
-            this.time.Text = "Время выполнения заказа";
-            this.time.Click += new System.EventHandler(this.Time_Click);
+            this.radButtonElement2.AutoSize = false;
+            this.radButtonElement2.Bounds = new System.Drawing.Rectangle(0, 0, 76, 76);
+            this.radButtonElement2.Image = ((System.Drawing.Image)(resources.GetObject("radButtonElement2.Image")));
+            this.radButtonElement2.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.radButtonElement2.Name = "radButtonElement2";
+            this.radButtonElement2.Text = "Компоненты";
+            this.radButtonElement2.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
+            this.radButtonElement2.Click += new System.EventHandler(this.radButtonElement2_Click);
             // 
-            // lotSize
+            // radButtonElement3
             // 
-            this.lotSize.Name = "lotSize";
-            this.lotSize.Size = new System.Drawing.Size(300, 22);
-            this.lotSize.Text = "Объём партии";
-            this.lotSize.Click += new System.EventHandler(this.LotSize_Click);
+            this.radButtonElement3.AutoSize = false;
+            this.radButtonElement3.Bounds = new System.Drawing.Rectangle(0, 0, 76, 76);
+            this.radButtonElement3.Image = ((System.Drawing.Image)(resources.GetObject("radButtonElement3.Image")));
+            this.radButtonElement3.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.radButtonElement3.Name = "radButtonElement3";
+            this.radButtonElement3.Text = "Иерархия";
+            this.radButtonElement3.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             // 
-            // toolStripSeparator7
+            // radRibbonBarGroup8
             // 
-            this.toolStripSeparator7.Name = "toolStripSeparator7";
-            this.toolStripSeparator7.Size = new System.Drawing.Size(297, 6);
+            this.radRibbonBarGroup8.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.radButtonElement12,
+            this.radButtonElement13,
+            this.radButtonElement14,
+            this.radButtonElement15});
+            this.radRibbonBarGroup8.Name = "radRibbonBarGroup8";
+            this.radRibbonBarGroup8.Text = "Планирование";
             // 
-            // добавлениеЗаказаToolStripMenuItem
+            // radRibbonBarGroup3
             // 
-            this.добавлениеЗаказаToolStripMenuItem.Name = "добавлениеЗаказаToolStripMenuItem";
-            this.добавлениеЗаказаToolStripMenuItem.Size = new System.Drawing.Size(300, 22);
-            this.добавлениеЗаказаToolStripMenuItem.Text = "Добавление заказа";
-            this.добавлениеЗаказаToolStripMenuItem.Click += new System.EventHandler(this.ДобавлениеЗаказаToolStripMenuItem_Click);
+            this.radRibbonBarGroup3.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.radButtonElement4});
+            this.radRibbonBarGroup3.Name = "radRibbonBarGroup3";
+            this.radRibbonBarGroup3.Text = "Главное";
             // 
-            // просмотретьToolStripMenuItem
+            // radButtonElement4
             // 
-            this.просмотретьToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.planningMRP});
-            this.просмотретьToolStripMenuItem.Name = "просмотретьToolStripMenuItem";
-            this.просмотретьToolStripMenuItem.Size = new System.Drawing.Size(89, 20);
-            this.просмотретьToolStripMenuItem.Text = "Мониторинг";
+            this.radButtonElement4.Name = "radButtonElement4";
+            this.radButtonElement4.Text = "Главное";
+            this.radButtonElement4.Click += new System.EventHandler(this.radButtonElement4_Click);
             // 
-            // planningMRP
+            // radRibbonBarGroup4
             // 
-            this.planningMRP.Name = "planningMRP";
-            this.planningMRP.Size = new System.Drawing.Size(184, 22);
-            this.planningMRP.Text = "Планирование MRP";
-            this.planningMRP.Click += new System.EventHandler(this.PlanningMRP_Click);
+            this.radRibbonBarGroup4.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.radButtonElement6,
+            this.radButtonElement7,
+            this.radButtonElement8});
+            this.radRibbonBarGroup4.Name = "radRibbonBarGroup4";
+            this.radRibbonBarGroup4.Text = "По элементам";
             // 
-            // справкаToolStripMenuItem
+            // radButtonElement6
             // 
-            this.справкаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.about});
-            this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
-            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
-            this.справкаToolStripMenuItem.Text = "Справка";
+            this.radButtonElement6.Name = "radButtonElement6";
+            this.radButtonElement6.Text = "Склад";
+            this.radButtonElement6.Click += new System.EventHandler(this.radButtonElement6_Click);
             // 
-            // about
+            // radButtonElement7
             // 
-            this.about.Name = "about";
-            this.about.Size = new System.Drawing.Size(149, 22);
-            this.about.Text = "О программе";
-            this.about.Click += new System.EventHandler(this.About_Click);
+            this.radButtonElement7.Name = "radButtonElement7";
+            this.radButtonElement7.Text = "Время";
+            this.radButtonElement7.Click += new System.EventHandler(this.radButtonElement7_Click);
             // 
-            // toolStrip1
+            // radButtonElement8
             // 
-            this.toolStrip1.AutoSize = false;
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton2,
-            this.toolStripSeparator1,
-            this.toolStripButton1,
-            this.toolStripSeparator6,
-            this.toolStripButton3,
-            this.toolStripButton6,
-            this.toolStripButton7,
-            this.toolStripSeparator2,
-            this.toolStripButton4,
-            this.toolStripSeparator5,
-            this.toolStripButton5});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 24);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1099, 40);
-            this.toolStrip1.TabIndex = 2;
-            this.toolStrip1.Text = "toolStrip1";
+            this.radButtonElement8.Name = "radButtonElement8";
+            this.radButtonElement8.Text = "Объём партии";
+            this.radButtonElement8.Click += new System.EventHandler(this.radButtonElement8_Click);
             // 
-            // toolStripButton2
+            // radRibbonBarGroup5
             // 
-            this.toolStripButton2.AutoSize = false;
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton2.Text = "Структура изделия";
-            this.toolStripButton2.Click += new System.EventHandler(this.Specification_Click);
+            this.radRibbonBarGroup5.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.radButtonElement5});
+            this.radRibbonBarGroup5.Name = "radRibbonBarGroup5";
+            this.radRibbonBarGroup5.Text = "Расчёт";
             // 
-            // toolStripSeparator1
+            // radButtonElement5
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 40);
+            this.radButtonElement5.Name = "radButtonElement5";
+            this.radButtonElement5.Text = "MRP рассчёт";
+            this.radButtonElement5.Click += new System.EventHandler(this.radButtonElement5_Click);
             // 
-            // toolStripButton1
+            // ribbonTab5
             // 
-            this.toolStripButton1.AutoSize = false;
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton1.Text = "Главное производственное планирование";
-            this.toolStripButton1.Click += new System.EventHandler(this.MainProductPlanning_Click);
+            this.ribbonTab5.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.radRibbonBarGroup7});
+            this.ribbonTab5.Name = "ribbonTab5";
+            this.ribbonTab5.Text = "Клиент";
+            this.ribbonTab5.UseMnemonic = false;
             // 
-            // toolStripSeparator6
+            // radRibbonBarGroup7
             // 
-            this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 40);
+            this.radRibbonBarGroup7.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.radButtonElement10});
+            this.radRibbonBarGroup7.Name = "radRibbonBarGroup7";
+            this.radRibbonBarGroup7.Text = "Заказы";
             // 
-            // toolStripButton3
+            // radButtonElement10
             // 
-            this.toolStripButton3.AutoSize = false;
-            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton3.Text = "Компоненты на складе";
-            this.toolStripButton3.Click += new System.EventHandler(this.Store_Click);
+            this.radButtonElement10.Name = "radButtonElement10";
+            this.radButtonElement10.Text = "Заказы";
+            this.radButtonElement10.Click += new System.EventHandler(this.radButtonElement10_Click);
             // 
-            // toolStripButton6
+            // ribbonTab4
             // 
-            this.toolStripButton6.AutoSize = false;
-            this.toolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton6.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton6.Image")));
-            this.toolStripButton6.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton6.Name = "toolStripButton6";
-            this.toolStripButton6.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton6.Text = "Время выполнения заказа";
-            this.toolStripButton6.Click += new System.EventHandler(this.Time_Click);
+            this.ribbonTab4.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.radRibbonBarGroup6});
+            this.ribbonTab4.Name = "ribbonTab4";
+            this.ribbonTab4.Text = "Справка";
+            this.ribbonTab4.UseMnemonic = false;
             // 
-            // toolStripButton7
+            // radRibbonBarGroup6
             // 
-            this.toolStripButton7.AutoSize = false;
-            this.toolStripButton7.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton7.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton7.Image")));
-            this.toolStripButton7.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton7.Name = "toolStripButton7";
-            this.toolStripButton7.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton7.Text = "Объём партии";
-            this.toolStripButton7.Click += new System.EventHandler(this.LotSize_Click);
+            this.radRibbonBarGroup6.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.radButtonElement9});
+            this.radRibbonBarGroup6.Name = "radRibbonBarGroup6";
+            this.radRibbonBarGroup6.Text = "Информация";
             // 
-            // toolStripSeparator2
+            // radButtonElement9
             // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 40);
+            this.radButtonElement9.AutoSize = false;
+            this.radButtonElement9.Bounds = new System.Drawing.Rectangle(0, 0, 76, 76);
+            this.radButtonElement9.Image = ((System.Drawing.Image)(resources.GetObject("radButtonElement9.Image")));
+            this.radButtonElement9.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.radButtonElement9.Name = "radButtonElement9";
+            this.radButtonElement9.Text = "О программе";
+            this.radButtonElement9.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
+            this.radButtonElement9.Click += new System.EventHandler(this.radButtonElement9_Click);
             // 
-            // toolStripButton4
+            // radMenuItem1
             // 
-            this.toolStripButton4.AutoSize = false;
-            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
-            this.toolStripButton4.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton4.Text = "Планирование MRP";
-            this.toolStripButton4.Click += new System.EventHandler(this.PlanningMRP_Click);
+            this.radMenuItem1.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.radMenuItem4,
+            this.radMenuItem5});
+            this.radMenuItem1.Name = "radMenuItem1";
+            this.radMenuItem1.Text = "Авторизация";
+            this.radMenuItem1.Click += new System.EventHandler(this.radMenuItem1_Click);
             // 
-            // toolStripSeparator5
+            // radMenuItem4
             // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 40);
+            this.radMenuItem4.Name = "radMenuItem4";
+            this.radMenuItem4.Text = "Войти";
             // 
-            // toolStripButton5
+            // radMenuItem5
             // 
-            this.toolStripButton5.AutoSize = false;
-            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
-            this.toolStripButton5.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton5.Text = "О программе";
-            this.toolStripButton5.Click += new System.EventHandler(this.About_Click);
+            this.radMenuItem5.Name = "radMenuItem5";
+            this.radMenuItem5.Text = "Выйти";
+            // 
+            // radMenuItem2
+            // 
+            this.radMenuItem2.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.radMenuItem6});
+            this.radMenuItem2.Name = "radMenuItem2";
+            this.radMenuItem2.Text = "Структура изделия";
+            // 
+            // radMenuItem6
+            // 
+            this.radMenuItem6.Name = "radMenuItem6";
+            this.radMenuItem6.Text = "radMenuItem6";
+            // 
+            // radMenuItem7
+            // 
+            this.radMenuItem7.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.radMenuItem8,
+            this.radMenuItem9,
+            this.radMenuItem10,
+            this.radMenuItem11,
+            this.radMenuSeparatorItem2,
+            this.radMenuItem12});
+            this.radMenuItem7.Name = "radMenuItem7";
+            this.radMenuItem7.Text = "Планирование";
+            this.radMenuItem7.Click += new System.EventHandler(this.radMenuItem7_Click);
+            // 
+            // radMenuItem8
+            // 
+            this.radMenuItem8.Name = "radMenuItem8";
+            this.radMenuItem8.Text = "Главное";
+            // 
+            // radMenuItem9
+            // 
+            this.radMenuItem9.Name = "radMenuItem9";
+            this.radMenuItem9.Text = "Компоненты на складе";
+            // 
+            // radMenuItem10
+            // 
+            this.radMenuItem10.Name = "radMenuItem10";
+            this.radMenuItem10.Text = "Время выполнения заказа";
+            // 
+            // radMenuItem11
+            // 
+            this.radMenuItem11.Name = "radMenuItem11";
+            this.radMenuItem11.Text = "Объём партии";
+            // 
+            // radMenuSeparatorItem2
+            // 
+            this.radMenuSeparatorItem2.Name = "radMenuSeparatorItem2";
+            this.radMenuSeparatorItem2.Text = "radMenuSeparatorItem2";
+            this.radMenuSeparatorItem2.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // radMenuItem12
+            // 
+            this.radMenuItem12.Name = "radMenuItem12";
+            this.radMenuItem12.Text = "Добавить заказ";
+            // 
+            // radMenuSeparatorItem1
+            // 
+            this.radMenuSeparatorItem1.Name = "radMenuSeparatorItem1";
+            this.radMenuSeparatorItem1.Text = "radMenuSeparatorItem1";
+            this.radMenuSeparatorItem1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // radMenuItem3
+            // 
+            this.radMenuItem3.Name = "radMenuItem3";
+            this.radMenuItem3.Text = "Выход";
+            this.radMenuItem3.Click += new System.EventHandler(this.radMenuItem3_Click);
+            // 
+            // radRibbonFormBehavior1
+            // 
+            this.radRibbonFormBehavior1.Form = this;
+            // 
+            // radButtonElement12
+            // 
+            this.radButtonElement12.AutoSize = false;
+            this.radButtonElement12.Bounds = new System.Drawing.Rectangle(0, 0, 76, 76);
+            this.radButtonElement12.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.radButtonElement12.Name = "radButtonElement12";
+            this.radButtonElement12.Text = "Главное";
+            this.radButtonElement12.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
+            this.radButtonElement12.Click += new System.EventHandler(this.radButtonElement12_Click);
+            // 
+            // radButtonElement13
+            // 
+            this.radButtonElement13.AutoSize = false;
+            this.radButtonElement13.Bounds = new System.Drawing.Rectangle(0, 0, 76, 76);
+            this.radButtonElement13.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.radButtonElement13.Name = "radButtonElement13";
+            this.radButtonElement13.Text = "Склад";
+            this.radButtonElement13.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
+            this.radButtonElement13.Click += new System.EventHandler(this.radButtonElement13_Click);
+            // 
+            // radButtonElement14
+            // 
+            this.radButtonElement14.AutoSize = false;
+            this.radButtonElement14.Bounds = new System.Drawing.Rectangle(0, 0, 76, 76);
+            this.radButtonElement14.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.radButtonElement14.Name = "radButtonElement14";
+            this.radButtonElement14.Text = "Время";
+            this.radButtonElement14.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
+            this.radButtonElement14.Click += new System.EventHandler(this.radButtonElement14_Click);
+            // 
+            // radButtonElement15
+            // 
+            this.radButtonElement15.AutoSize = false;
+            this.radButtonElement15.Bounds = new System.Drawing.Rectangle(0, 0, 76, 76);
+            this.radButtonElement15.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.radButtonElement15.Name = "radButtonElement15";
+            this.radButtonElement15.Text = "Объём";
+            this.radButtonElement15.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
+            this.radButtonElement15.Click += new System.EventHandler(this.radButtonElement15_Click);
+            // 
+            // radRibbonBarGroup9
+            // 
+            this.radRibbonBarGroup9.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.radButtonElement16});
+            this.radRibbonBarGroup9.Name = "radRibbonBarGroup9";
+            this.radRibbonBarGroup9.Text = "Рассчёт";
+            // 
+            // radButtonElement16
+            // 
+            this.radButtonElement16.AutoSize = false;
+            this.radButtonElement16.Bounds = new System.Drawing.Rectangle(0, 0, 76, 76);
+            this.radButtonElement16.Name = "radButtonElement16";
+            this.radButtonElement16.Text = "MRP рассчёт";
+            this.radButtonElement16.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
+            this.radButtonElement16.Click += new System.EventHandler(this.radButtonElement16_Click);
+            // 
+            // ribbonTab6
+            // 
+            this.ribbonTab6.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.radRibbonBarGroup10});
+            this.ribbonTab6.Name = "ribbonTab6";
+            this.ribbonTab6.Text = "Пользователи";
+            this.ribbonTab6.UseMnemonic = false;
+            // 
+            // radRibbonBarGroup10
+            // 
+            this.radRibbonBarGroup10.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.radButtonElement17});
+            this.radRibbonBarGroup10.Name = "radRibbonBarGroup10";
+            this.radRibbonBarGroup10.Text = "Пользователи системы";
+            // 
+            // radButtonElement17
+            // 
+            this.radButtonElement17.AutoSize = false;
+            this.radButtonElement17.Bounds = new System.Drawing.Rectangle(0, 0, 80, 76);
+            this.radButtonElement17.Image = ((System.Drawing.Image)(resources.GetObject("radButtonElement17.Image")));
+            this.radButtonElement17.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.radButtonElement17.Name = "radButtonElement17";
+            this.radButtonElement17.Text = "Пользователи";
+            this.radButtonElement17.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(1099, 731);
-            this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.menuStrip1);
+            this.ClientSize = new System.Drawing.Size(1103, 708);
+            this.Controls.Add(this.radRibbonBar1);
+            this.Controls.Add(this.radStatusStrip1);
+            this.FormBehavior = this.radRibbonFormBehavior1;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.menuStrip1;
+            this.IconScaling = Telerik.WinControls.Enumerations.ImageScaling.None;
             this.Name = "MainForm";
             // 
             // 
@@ -358,12 +506,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Автоматизированная система MRP для планирования производства";
             this.ThemeName = "Material";
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radStatusStrip1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radRibbonBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -371,39 +515,56 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
-        private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exit;
-        private System.Windows.Forms.ToolStripMenuItem создатьToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mainProductPlanning;
-        private System.Windows.Forms.ToolStripMenuItem store;
-        private System.Windows.Forms.ToolStripMenuItem просмотретьToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem planningMRP;
-        private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem about;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
-        private System.Windows.Forms.ToolStripButton toolStripButton4;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripButton toolStripButton5;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.ToolStripMenuItem specification;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.ToolStripMenuItem time;
-        private System.Windows.Forms.ToolStripMenuItem lotSize;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
-        private System.Windows.Forms.ToolStripButton toolStripButton3;
-        private System.Windows.Forms.ToolStripButton toolStripButton6;
-        private System.Windows.Forms.ToolStripButton toolStripButton7;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
-        private System.Windows.Forms.ToolStripMenuItem добавлениеЗаказаToolStripMenuItem;
         private Telerik.WinControls.Themes.TelerikMetroBlueTheme telerikMetroBlueTheme1;
+        private Telerik.WinControls.UI.RadStatusStrip radStatusStrip1;
+        private Telerik.WinControls.UI.RadRibbonBar radRibbonBar1;
+        private Telerik.WinControls.UI.RibbonTab ribbonTab1;
+        private Telerik.WinControls.UI.RibbonTab ribbonTab2;
+        private Telerik.WinControls.UI.RibbonTab ribbonTab4;
+        private Telerik.WinControls.UI.RadMenuItem radMenuItem1;
+        private Telerik.WinControls.UI.RadMenuItem radMenuItem2;
+        private Telerik.WinControls.UI.RadMenuSeparatorItem radMenuSeparatorItem1;
+        private Telerik.WinControls.UI.RadMenuItem radMenuItem3;
+        private Telerik.WinControls.UI.RadRibbonFormBehavior radRibbonFormBehavior1;
+        private Telerik.WinControls.UI.RadRibbonBarGroup radRibbonBarGroup1;
+        private Telerik.WinControls.UI.RadButtonElement radButtonElement1;
+        private Telerik.WinControls.UI.RadRibbonBarGroup radRibbonBarGroup2;
+        private Telerik.WinControls.UI.RadButtonElement radButtonElement2;
+        private Telerik.WinControls.UI.RadButtonElement radButtonElement3;
+        private Telerik.WinControls.UI.RadRibbonBarGroup radRibbonBarGroup3;
+        private Telerik.WinControls.UI.RadButtonElement radButtonElement4;
+        private Telerik.WinControls.UI.RadRibbonBarGroup radRibbonBarGroup4;
+        private Telerik.WinControls.UI.RadButtonElement radButtonElement6;
+        private Telerik.WinControls.UI.RadButtonElement radButtonElement7;
+        private Telerik.WinControls.UI.RadButtonElement radButtonElement8;
+        private Telerik.WinControls.UI.RadRibbonBarGroup radRibbonBarGroup5;
+        private Telerik.WinControls.UI.RadButtonElement radButtonElement5;
+        private Telerik.WinControls.UI.RadRibbonBarGroup radRibbonBarGroup6;
+        private Telerik.WinControls.UI.RadButtonElement radButtonElement9;
+        private Telerik.WinControls.UI.RadMenuItem radMenuItem4;
+        private Telerik.WinControls.UI.RadMenuItem radMenuItem5;
+        private Telerik.WinControls.UI.RadMenuItem radMenuItem6;
+        private Telerik.WinControls.UI.RadMenuItem radMenuItem7;
+        private Telerik.WinControls.UI.RadMenuItem radMenuItem8;
+        private Telerik.WinControls.UI.RadMenuItem radMenuItem9;
+        private Telerik.WinControls.UI.RadMenuItem radMenuItem10;
+        private Telerik.WinControls.UI.RadMenuItem radMenuItem11;
+        private Telerik.WinControls.UI.RadMenuSeparatorItem radMenuSeparatorItem2;
+        private Telerik.WinControls.UI.RadMenuItem radMenuItem12;
+        private Telerik.WinControls.UI.RibbonTab ribbonTab5;
+        private Telerik.WinControls.UI.RadRibbonBarGroup radRibbonBarGroup7;
+        private Telerik.WinControls.UI.RadButtonElement radButtonElement10;
+        private Telerik.WinControls.UI.RadButtonElement radButtonElement11;
+        private Telerik.WinControls.UI.RadRibbonBarGroup radRibbonBarGroup8;
+        private Telerik.WinControls.UI.RadButtonElement radButtonElement12;
+        private Telerik.WinControls.UI.RadButtonElement radButtonElement13;
+        private Telerik.WinControls.UI.RadButtonElement radButtonElement14;
+        private Telerik.WinControls.UI.RadButtonElement radButtonElement15;
+        private Telerik.WinControls.UI.RadRibbonBarGroup radRibbonBarGroup9;
+        private Telerik.WinControls.UI.RadButtonElement radButtonElement16;
+        private Telerik.WinControls.UI.RibbonTab ribbonTab6;
+        private Telerik.WinControls.UI.RadRibbonBarGroup radRibbonBarGroup10;
+        private Telerik.WinControls.UI.RadButtonElement radButtonElement17;
     }
 }
 
