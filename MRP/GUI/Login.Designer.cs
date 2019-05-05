@@ -77,6 +77,7 @@
             // 
             // radButton1
             // 
+            this.radButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(219)))), ((int)(((byte)(200)))));
             this.radButton1.Location = new System.Drawing.Point(101, 126);
             this.radButton1.Name = "radButton1";
             this.radButton1.Size = new System.Drawing.Size(69, 24);

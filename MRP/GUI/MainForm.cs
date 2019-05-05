@@ -9,6 +9,7 @@ namespace MRP.GUI
         {
             InitializeComponent();
             // ThemeResolutionService.ApplicationThemeName = "TelerikMetroBlue";
+            ribbonTab1.IsSelected = true;
         }
 
 #region Forms
@@ -163,6 +164,12 @@ namespace MRP.GUI
         }
 
         private void radMenuItem13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void SetUserPermission()
         {
 
         }
