@@ -12,57 +12,6 @@ namespace MRP.GUI
             ribbonTab1.IsSelected = true;
         }
 
-#region Forms
-
-        private void Exit_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-
-
-        private void About_Click(object sender, EventArgs e)
-        {
-            new About().Show();
-        }
-
-#endregion
-
-        private void Specification_Click(object sender, EventArgs e)
-        {
-            new Specification().Show();
-        }
-
-        private void MainProductPlanning_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void Store_Click(object sender, EventArgs e)
-        {
-            new Store().Show();
-        }
-
-        private void Time_Click(object sender, EventArgs e)
-        {
-            new TimeProduction().Show();
-        }
-
-        private void LotSize_Click(object sender, EventArgs e)
-        {
-            new LotSizeComponent().Show();
-        }
-
-        private void PlanningMRP_Click(object sender, EventArgs e)
-        {
-            new Mrp().Show();
-        }
-
-        private void ДобавлениеЗаказаToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            new Order().Show();
-        }
-
         private void radMenuItem1_Click(object sender, EventArgs e)
         {
 
@@ -113,21 +62,6 @@ namespace MRP.GUI
             new About().Show();
         }
 
-        private void radButtonElement2_Click(object sender, EventArgs e)
-        {
-            new Specification().Show();
-        }
-
-        /// <summary>
-        /// Main scheduler
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ribbonTab3_Click(object sender, EventArgs e)
-        {
-          
-        }
-
         /// <summary>
         /// Store
         /// </summary>
@@ -160,7 +94,10 @@ namespace MRP.GUI
 
         private void radButtonElement1_Click(object sender, EventArgs e)
         {
-            new Login().Show();
+            var loginForm = new Login();
+            loginForm.OnUserAuthorized += setUserPermission; 
+            loginForm.Show();
+
         }
 
         private void radMenuItem13_Click(object sender, EventArgs e)
@@ -169,9 +106,82 @@ namespace MRP.GUI
         }
 
 
-        private void SetUserPermission()
+        private void setUserPermission(object sender, LoginEventArgs e)
         {
+            // hide all
+            resetUserPermission();
 
+            switch (e.UserRole)
+            {
+                case 1:
+                    setPermissionsForManager(e.UserName);
+                    break;
+                case 2:
+                    setPermissionsForClient(e.UserName);
+                    break;
+                case 3:
+                    setPermissionsForAdmin(e.UserName);
+                    break;
+                default:
+                    resetUserPermission();
+                    break;
+            }
+        }
+
+        private void setPermissionsForManager(string managerName)
+        {
+            radLabelElement1.Text = @"Добро пожаловать, менеджер " + managerName;
+            ribbonTab2.Visibility = ElementVisibility.Visible;
+            ribbonTab5.Visibility = ElementVisibility.Collapsed;
+            ribbonTab6.Visibility = ElementVisibility.Collapsed;
+            ribbonTab2.IsSelected = true;
+            radMenuItem7.Visibility = ElementVisibility.Visible;
+            radMenuItem13.Visibility = ElementVisibility.Collapsed;
+            radMenuItem14.Visibility = ElementVisibility.Collapsed;
+        }
+
+        private void setPermissionsForClient(string clientName)
+        {
+            radLabelElement1.Text = @"Добро пожаловать, клиент " + clientName;
+            ribbonTab2.Visibility = ElementVisibility.Collapsed;
+            ribbonTab5.Visibility = ElementVisibility.Visible;
+            ribbonTab6.Visibility = ElementVisibility.Collapsed;
+            ribbonTab5.IsSelected = true;
+            radMenuItem7.Visibility = ElementVisibility.Collapsed;
+            radMenuItem13.Visibility = ElementVisibility.Visible;
+            radMenuItem14.Visibility = ElementVisibility.Collapsed;
+        }
+
+        private void setPermissionsForAdmin(string adminName)
+        {
+            radLabelElement1.Text = @"Добро пожаловать, администратор " + adminName;
+            ribbonTab2.Visibility = ElementVisibility.Collapsed;
+            ribbonTab5.Visibility = ElementVisibility.Collapsed;
+            ribbonTab6.Visibility = ElementVisibility.Visible;
+            ribbonTab6.IsSelected = true;
+            radMenuItem7.Visibility = ElementVisibility.Collapsed;
+            radMenuItem13.Visibility = ElementVisibility.Collapsed;
+            radMenuItem14.Visibility = ElementVisibility.Visible;
+        }
+
+        private void resetUserPermission()
+        {
+            radLabelElement1.Text = @"Aвторизуйтесь в системе для дальнейшей работы.";
+            ribbonTab2.Visibility = ElementVisibility.Collapsed;
+            ribbonTab5.Visibility = ElementVisibility.Collapsed;
+            ribbonTab6.Visibility = ElementVisibility.Collapsed;
+            ribbonTab1.IsSelected = true;
+            radMenuItem7.Visibility = ElementVisibility.Collapsed;
+            radMenuItem13.Visibility = ElementVisibility.Collapsed;
+            radMenuItem14.Visibility = ElementVisibility.Collapsed;
+        }
+
+        private void radButtonElement11_Click(object sender, EventArgs e)
+        {
+            // logout
+            //hide all tabs except about and authorization
+            //hide start menu tabs
+            resetUserPermission();
         }
     }
 }

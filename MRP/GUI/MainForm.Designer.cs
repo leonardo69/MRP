@@ -144,7 +144,7 @@
             // 
             this.ribbonTab1.EnableHighlight = true;
             this.ribbonTab1.IsPinned = false;
-            this.ribbonTab1.IsSelected = true;
+            this.ribbonTab1.IsSelected = false;
             this.ribbonTab1.Items.AddRange(new Telerik.WinControls.RadItem[] {
             this.radRibbonBarGroup1});
             this.ribbonTab1.Name = "ribbonTab1";
@@ -182,10 +182,11 @@
             this.radButtonElement11.Name = "radButtonElement11";
             this.radButtonElement11.Text = "Выйти";
             this.radButtonElement11.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
+            this.radButtonElement11.Click += new System.EventHandler(this.radButtonElement11_Click);
             // 
             // ribbonTab2
             // 
-            this.ribbonTab2.IsSelected = false;
+            this.ribbonTab2.IsSelected = true;
             this.ribbonTab2.Items.AddRange(new Telerik.WinControls.RadItem[] {
             this.radRibbonBarGroup2,
             this.radRibbonBarGroup8,
@@ -434,6 +435,7 @@
             this.radMenuItem12});
             this.radMenuItem7.Name = "radMenuItem7";
             this.radMenuItem7.Text = "Анализ";
+            this.radMenuItem7.Visibility = Telerik.WinControls.ElementVisibility.Collapsed;
             this.radMenuItem7.Click += new System.EventHandler(this.radMenuItem7_Click);
             // 
             // radMenuItem8
@@ -465,7 +467,7 @@
             // radMenuItem12
             // 
             this.radMenuItem12.Name = "radMenuItem12";
-            this.radMenuItem12.Text = "Добавить заказ";
+            this.radMenuItem12.Text = "MRP рассчёт";
             // 
             // radMenuItem13
             // 
@@ -474,6 +476,7 @@
             this.radMenuItem6});
             this.radMenuItem13.Name = "radMenuItem13";
             this.radMenuItem13.Text = "Клиент";
+            this.radMenuItem13.Visibility = Telerik.WinControls.ElementVisibility.Collapsed;
             this.radMenuItem13.Click += new System.EventHandler(this.radMenuItem13_Click);
             // 
             // radMenuItem2
@@ -494,6 +497,7 @@
             this.radMenuItem17});
             this.radMenuItem14.Name = "radMenuItem14";
             this.radMenuItem14.Text = "Пользователи";
+            this.radMenuItem14.Visibility = Telerik.WinControls.ElementVisibility.Collapsed;
             // 
             // radMenuItem15
             // 
