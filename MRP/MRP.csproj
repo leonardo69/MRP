@@ -88,14 +88,38 @@
       <DependentUpon>DeleteUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Core\DBAccess.cs" />
+    <Compile Include="Entities\Component.cs" />
     <Compile Include="Entities\DatabaseCreator.cs" />
+    <Compile Include="Entities\MainPlan.cs" />
+    <Compile Include="Entities\Order.cs" />
+    <Compile Include="Entities\Specification.cs" />
+    <Compile Include="Entities\Store.cs" />
     <Compile Include="Entities\User.cs" />
-    <Compile Include="Entities\UserContext.cs" />
+    <Compile Include="Entities\DataContext.cs" />
+    <Compile Include="Entities\Volume.cs" />
     <Compile Include="GUI\About.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\About.Designer.cs">
       <DependentUpon>About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\AddAssemblyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\AddAssemblyForm.Designer.cs">
+      <DependentUpon>AddAssemblyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\AddComponentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\AddComponentForm.Designer.cs">
+      <DependentUpon>AddComponentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\AssemblyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\AssemblyForm.Designer.cs">
+      <DependentUpon>AssemblyForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Login.cs">
       <SubType>Form</SubType>
@@ -175,6 +199,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\About.resx">
       <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\AddAssemblyForm.resx">
+      <DependentUpon>AddAssemblyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\AddComponentForm.resx">
+      <DependentUpon>AddComponentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\AssemblyForm.resx">
+      <DependentUpon>AssemblyForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

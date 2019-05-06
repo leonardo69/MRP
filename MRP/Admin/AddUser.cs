@@ -25,7 +25,7 @@ namespace MRP.Admin
 
         private void LoadUsers()
         {
-            using (var db = new UserContext())
+            using (var db = new DataContext())
             {
                 var users = db.Users.ToList();
                 radGridView1.DataSource = users;
@@ -39,7 +39,7 @@ namespace MRP.Admin
                 MessageBox.Show(@"Заполните все поля");
             }
 
-            using (var db = new UserContext())
+            using (var db = new DataContext())
             {
                 Enum.TryParse<Role>(radDropDownList1.SelectedValue.ToString(), out var selectedRole);
 

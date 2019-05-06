@@ -26,7 +26,7 @@ namespace MRP.GUI
                 MessageBox.Show(@"Введите логин и пароль");
             }
 
-            using (var db = new UserContext())
+            using (var db = new DataContext())
             {
                 var foundUser = db.Users.FirstOrDefault(x => x.Name == radTextBox1.Text && x.Password == radTextBox2.Text);
                 if (foundUser == null)

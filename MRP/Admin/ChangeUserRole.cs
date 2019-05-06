@@ -24,7 +24,7 @@ namespace MRP.Admin
 
         private void LoadUsers()
         {
-            using (var db = new UserContext())
+            using (var db = new DataContext())
             {
                 var users = db.Users.ToList();
                 radGridView1.DataSource = users;
@@ -45,7 +45,7 @@ namespace MRP.Admin
             var userId = radGridView1.CurrentRow.Cells[0].Value;
             if (userId == null) MessageBox.Show(@"Выберите пользователя в таблице");
 
-            using (var db = new UserContext())
+            using (var db = new DataContext())
             {
                 var userToChange = db.Users.FirstOrDefault(x => x.Id == (int)userId);
                 if (userToChange != null)

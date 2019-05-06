@@ -12,8 +12,9 @@ namespace MRP.GUI
             InitializeComponent();
             ribbonTab1.IsSelected = true;
             //var creator = new DatabaseCreator();
-            //creator.Create();
-            setPermissionsForAdmin("Root");
+            //creator.CreateUsers();
+            //creator.CreateComponents();
+            setPermissionsForManager("RootManager");
         }
 
         private void radMenuItem1_Click(object sender, EventArgs e)
