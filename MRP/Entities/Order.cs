@@ -10,7 +10,7 @@ namespace MRP.Entities
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public Specification Specification { get; set; }
+        public Assembly Assembly { get; set; }
         public int WeekNumber { get; set; }
         public int Count { get; set; }
     }

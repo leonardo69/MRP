@@ -30,24 +30,24 @@ namespace MRP.Entities
                     Unit = "шт"
                 };
            
-                var firstSpecification = new Specification
+                var firstAssembly = new Assembly
                 {
                     Name = "Душевая кабина Rosa",
                     StartComponent = washer
                 };
 
-                db.Specifications.Add(firstSpecification);
+                db.Specifications.Add(firstAssembly);
                 db.SaveChanges();
 
-                washer.SpecificationId = firstSpecification.Id;
-                washer.Childrens = new List<Component>
+                washer.AssemblyId = firstAssembly.Id;
+                washer.Children = new List<Component>
                 {
-                    new Component {Name = "Каркас со стенками", Unit = "шт", SpecificationId = firstSpecification.Id},
+                    new Component {Name = "Каркас со стенками", Unit = "шт", AssemblyId = firstAssembly.Id},
                     new Component
                     {
-                        Name = "Ручной душ", Unit = "шт", SpecificationId = firstSpecification.Id, Childrens = new List<Component>
+                        Name = "Ручной душ", Unit = "шт", AssemblyId = firstAssembly.Id, Children = new List<Component>
                         {
-                            new Component {Name = "Смеситель", Unit = "шт",  SpecificationId = firstSpecification.Id}
+                            new Component {Name = "Смеситель", Unit = "шт",  AssemblyId = firstAssembly.Id}
                         }
                     }
                 };
@@ -55,7 +55,6 @@ namespace MRP.Entities
                 db.Entry(washer).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
 
-                var components = db.Components.ToList();
             }
         }
     }

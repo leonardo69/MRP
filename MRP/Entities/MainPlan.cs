@@ -3,7 +3,7 @@
     public class MainPlan
     {
         public int Id { get; set; }
-        public Specification Specification { get; set; }
+        public Assembly Assembly { get; set; }
         public int Week1 { get; set; }
         public int Week2 { get; set; }
         public int Week3 { get; set; }

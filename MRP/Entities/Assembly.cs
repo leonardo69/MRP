@@ -1,6 +1,6 @@
 ﻿namespace MRP.Entities
 {
-    public class Specification
+    public class Assembly
     {
         public int Id { get; set; }
         public string Name { get; set; }

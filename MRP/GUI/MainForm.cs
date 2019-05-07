@@ -11,9 +11,9 @@ namespace MRP.GUI
         {
             InitializeComponent();
             ribbonTab1.IsSelected = true;
-            //var creator = new DatabaseCreator();
-            //creator.CreateUsers();
-            //creator.CreateComponents();
+            var creator = new DatabaseCreator();
+            creator.CreateUsers();
+            creator.CreateComponents();
             setPermissionsForManager("RootManager");
         }
 
@@ -204,6 +204,12 @@ namespace MRP.GUI
         {
             var changeUserRoleForm = new ChangeUserRole();
             changeUserRoleForm.Show();
+        }
+
+        private void radButtonElement3_Click(object sender, EventArgs e)
+        {
+            var assemblyForm = new AssemblyForm();
+            assemblyForm.Show();
         }
     }
 }

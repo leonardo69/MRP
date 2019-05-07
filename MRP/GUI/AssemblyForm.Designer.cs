@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AssemblyForm));
-            this.radListView1 = new Telerik.WinControls.UI.RadListView();
             this.radButton1 = new Telerik.WinControls.UI.RadButton();
             this.radButton2 = new Telerik.WinControls.UI.RadButton();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
@@ -37,7 +36,7 @@
             this.radTreeView1 = new Telerik.WinControls.UI.RadTreeView();
             this.radButton3 = new Telerik.WinControls.UI.RadButton();
             this.radButton4 = new Telerik.WinControls.UI.RadButton();
-            ((System.ComponentModel.ISupportInitialize)(this.radListView1)).BeginInit();
+            this.listView1 = new System.Windows.Forms.ListView();
             ((System.ComponentModel.ISupportInitialize)(this.radButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
@@ -48,16 +47,6 @@
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
-            // radListView1
-            // 
-            this.radListView1.AllowEdit = false;
-            this.radListView1.AllowRemove = false;
-            this.radListView1.Location = new System.Drawing.Point(12, 38);
-            this.radListView1.Name = "radListView1";
-            this.radListView1.Size = new System.Drawing.Size(226, 429);
-            this.radListView1.TabIndex = 0;
-            this.radListView1.SelectedItemChanged += new System.EventHandler(this.radListView1_SelectedItemChanged);
-            // 
             // radButton1
             // 
             this.radButton1.Location = new System.Drawing.Point(12, 488);
@@ -65,7 +54,7 @@
             this.radButton1.Size = new System.Drawing.Size(110, 24);
             this.radButton1.TabIndex = 1;
             this.radButton1.Text = "Добавить";
-            this.radButton1.Click += new System.EventHandler(this.radButton1_Click);
+            this.radButton1.Click += new System.EventHandler(this.DeleteAssembly_Click);
             // 
             // radButton2
             // 
@@ -98,7 +87,6 @@
             this.radTreeView1.Size = new System.Drawing.Size(558, 272);
             this.radTreeView1.SpacingBetweenNodes = -1;
             this.radTreeView1.TabIndex = 3;
-            this.radTreeView1.SelectedNodeChanged += new Telerik.WinControls.UI.RadTreeView.RadTreeViewEventHandler(this.radTreeView1_SelectedNodeChanged);
             // 
             // radButton3
             // 
@@ -107,7 +95,7 @@
             this.radButton3.Size = new System.Drawing.Size(110, 24);
             this.radButton3.TabIndex = 4;
             this.radButton3.Text = "Добавить";
-            this.radButton3.Click += new System.EventHandler(this.radButton3_Click);
+            this.radButton3.Click += new System.EventHandler(this.AddComponent_Click);
             // 
             // radButton4
             // 
@@ -116,13 +104,26 @@
             this.radButton4.Size = new System.Drawing.Size(110, 24);
             this.radButton4.TabIndex = 5;
             this.radButton4.Text = "Удалить";
-            this.radButton4.Click += new System.EventHandler(this.radButton4_Click);
+            this.radButton4.Click += new System.EventHandler(this.DeleteComponent_Click);
+            // 
+            // listView1
+            // 
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(12, 38);
+            this.listView1.MultiSelect = false;
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(226, 431);
+            this.listView1.TabIndex = 6;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.List;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.Assembly_SelectedIndexChanged);
             // 
             // AssemblyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(829, 540);
+            this.Controls.Add(this.listView1);
             this.Controls.Add(this.radButton4);
             this.Controls.Add(this.radButton3);
             this.Controls.Add(this.radTreeView1);
@@ -130,7 +131,6 @@
             this.Controls.Add(this.radLabel1);
             this.Controls.Add(this.radButton2);
             this.Controls.Add(this.radButton1);
-            this.Controls.Add(this.radListView1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AssemblyForm";
             // 
@@ -139,7 +139,6 @@
             this.RootElement.ApplyShapeToControl = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Сборки изделий";
-            ((System.ComponentModel.ISupportInitialize)(this.radListView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
@@ -154,8 +153,6 @@
         }
 
         #endregion
-
-        private Telerik.WinControls.UI.RadListView radListView1;
         private Telerik.WinControls.UI.RadButton radButton1;
         private Telerik.WinControls.UI.RadButton radButton2;
         private Telerik.WinControls.UI.RadLabel radLabel1;
@@ -163,5 +160,6 @@
         private Telerik.WinControls.UI.RadTreeView radTreeView1;
         private Telerik.WinControls.UI.RadButton radButton3;
         private Telerik.WinControls.UI.RadButton radButton4;
+        private System.Windows.Forms.ListView listView1;
     }
 }

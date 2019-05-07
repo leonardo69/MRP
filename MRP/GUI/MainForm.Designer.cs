@@ -193,7 +193,7 @@
             // 
             // ribbonTab2
             // 
-            this.ribbonTab2.IsSelected = false;
+            this.ribbonTab2.IsSelected = true;
             this.ribbonTab2.Items.AddRange(new Telerik.WinControls.RadItem[] {
             this.radRibbonBarGroup2,
             this.radRibbonBarGroup8,
@@ -219,6 +219,7 @@
             this.radButtonElement3.Name = "radButtonElement3";
             this.radButtonElement3.Text = "Иерархия";
             this.radButtonElement3.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
+            this.radButtonElement3.Click += new System.EventHandler(this.radButtonElement3_Click);
             // 
             // radRibbonBarGroup8
             // 
@@ -333,7 +334,7 @@
             // 
             // ribbonTab6
             // 
-            this.ribbonTab6.IsSelected = true;
+            this.ribbonTab6.IsSelected = false;
             this.ribbonTab6.Items.AddRange(new Telerik.WinControls.RadItem[] {
             this.radRibbonBarGroup10});
             this.ribbonTab6.Name = "ribbonTab6";

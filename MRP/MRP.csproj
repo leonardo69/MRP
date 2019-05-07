@@ -88,15 +88,14 @@
       <DependentUpon>DeleteUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Core\DBAccess.cs" />
+    <Compile Include="Core\Utils.cs" />
     <Compile Include="Entities\Component.cs" />
     <Compile Include="Entities\DatabaseCreator.cs" />
     <Compile Include="Entities\MainPlan.cs" />
     <Compile Include="Entities\Order.cs" />
-    <Compile Include="Entities\Specification.cs" />
-    <Compile Include="Entities\Store.cs" />
+    <Compile Include="Entities\Assembly.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Entities\DataContext.cs" />
-    <Compile Include="Entities\Volume.cs" />
     <Compile Include="GUI\About.cs">
       <SubType>Form</SubType>
     </Compile>
