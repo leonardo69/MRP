@@ -162,12 +162,6 @@
     <Compile Include="GUI\Store.Designer.cs">
       <DependentUpon>Store.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Specification.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Specification.Designer.cs">
-      <DependentUpon>Specification.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\TimeProduction.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -228,9 +222,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Store.resx">
       <DependentUpon>Store.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Specification.resx">
-      <DependentUpon>Specification.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\TimeProduction.resx">
       <DependentUpon>TimeProduction.cs</DependentUpon>
