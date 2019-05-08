@@ -50,8 +50,11 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
+            this.listView1 = new System.Windows.Forms.ListView();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,26 +79,26 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(13, 13);
+            this.groupBox1.Location = new System.Drawing.Point(167, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(633, 225);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Планирование производства душевых кабин по неделям";
+            this.groupBox1.Text = "Планирование производства";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(510, 180);
+            this.button1.Location = new System.Drawing.Point(505, 177);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 23);
             this.button1.TabIndex = 18;
             this.button1.Text = "Обновить";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.UpdatePlan_Click);
             // 
             // textBox9
             // 
-            this.textBox9.Location = new System.Drawing.Point(513, 127);
+            this.textBox9.Location = new System.Drawing.Point(505, 127);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(100, 20);
             this.textBox9.TabIndex = 17;
@@ -103,7 +106,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(440, 134);
+            this.label9.Location = new System.Drawing.Point(432, 134);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(57, 13);
             this.label9.TabIndex = 16;
@@ -111,7 +114,7 @@
             // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(513, 83);
+            this.textBox8.Location = new System.Drawing.Point(505, 83);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(100, 20);
             this.textBox8.TabIndex = 15;
@@ -119,7 +122,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(440, 90);
+            this.label8.Location = new System.Drawing.Point(432, 90);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(57, 13);
             this.label8.TabIndex = 14;
@@ -127,7 +130,7 @@
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(513, 40);
+            this.textBox7.Location = new System.Drawing.Point(505, 40);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(100, 20);
             this.textBox7.TabIndex = 13;
@@ -135,7 +138,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(440, 47);
+            this.label7.Location = new System.Drawing.Point(432, 47);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(60, 13);
             this.label7.TabIndex = 12;
@@ -143,7 +146,7 @@
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(302, 127);
+            this.textBox6.Location = new System.Drawing.Point(293, 127);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(100, 20);
             this.textBox6.TabIndex = 11;
@@ -151,7 +154,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(229, 134);
+            this.label6.Location = new System.Drawing.Point(220, 134);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(57, 13);
             this.label6.TabIndex = 10;
@@ -159,7 +162,7 @@
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(302, 87);
+            this.textBox5.Location = new System.Drawing.Point(293, 87);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(100, 20);
             this.textBox5.TabIndex = 9;
@@ -167,7 +170,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(229, 94);
+            this.label5.Location = new System.Drawing.Point(220, 94);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(57, 13);
             this.label5.TabIndex = 8;
@@ -175,7 +178,7 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(302, 44);
+            this.textBox4.Location = new System.Drawing.Point(293, 44);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(100, 20);
             this.textBox4.TabIndex = 7;
@@ -183,7 +186,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(229, 51);
+            this.label4.Location = new System.Drawing.Point(220, 51);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(57, 13);
             this.label4.TabIndex = 6;
@@ -241,17 +244,38 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 246);
+            this.dataGridView1.Location = new System.Drawing.Point(167, 245);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(633, 82);
             this.dataGridView1.TabIndex = 1;
             // 
+            // radLabel1
+            // 
+            this.radLabel1.Location = new System.Drawing.Point(12, 12);
+            this.radLabel1.Name = "radLabel1";
+            this.radLabel1.Size = new System.Drawing.Size(90, 18);
+            this.radLabel1.TabIndex = 2;
+            this.radLabel1.Text = "Список изделий";
+            // 
+            // listView1
+            // 
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(12, 36);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(137, 291);
+            this.listView1.TabIndex = 3;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.List;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.Assembly_SelectedIndexChanged);
+            // 
             // MainScheduler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(652, 340);
+            this.ClientSize = new System.Drawing.Size(812, 345);
+            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.radLabel1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -267,8 +291,10 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -295,5 +321,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
+        private Telerik.WinControls.UI.RadLabel radLabel1;
+        private System.Windows.Forms.ListView listView1;
     }
 }

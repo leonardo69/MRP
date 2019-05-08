@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using MRP.Entities;
 
 namespace MRP.Core
@@ -16,7 +12,7 @@ namespace MRP.Core
             return components;
         }
 
-        private static void TraverseTree(Component parent, List<Component> components)
+        private static void TraverseTree(Component parent, ICollection<Component> components)
         {
             if (parent.Children == null || parent.Children.Count <= 0) return;
             foreach (var child in parent.Children)

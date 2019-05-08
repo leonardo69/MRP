@@ -55,6 +55,10 @@ namespace MRP.Entities
                 db.Entry(washer).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
 
+                var mainPlan = new MainPlan { Assembly = firstAssembly };
+
+                db.MainPlans.Add(mainPlan);
+                db.SaveChanges();
             }
         }
     }

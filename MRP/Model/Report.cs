@@ -1,31 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Data;
-using Kurswork.Model;
-using MRP.Model;
 
-namespace Kurswork.Model
+namespace MRP.Model
 {
     class Report
     {
 
         public List<ComponentReport> GetReport(List<ComponentPlanning> components)
         {
-            List<ComponentReport> results = new List<ComponentReport>();
+            var results = new List<ComponentReport>();
 
 
             foreach(ComponentPlanning component in components)
             {
 
-                ComponentReport report = new ComponentReport();
-                report.Results = GetResultsInTable(component);
-                report.AvailableBalance = component.StartAvailableBalance.ToString();
-                report.LeadTime = component.LeadTime.ToString();
-                report.NameComponent = component.NameComponent;
-                report.LotSize = component.LotSize;
+                var report = new ComponentReport
+                {
+                    Results = GetResultsInTable(component),
+                    AvailableBalance = component.StartAvailableBalance.ToString(),
+                    LeadTime = component.LeadTime.ToString(),
+                    NameComponent = component.NameComponent,
+                    LotSize = component.LotSize
+                };
 
                 results.Add(report);
             }

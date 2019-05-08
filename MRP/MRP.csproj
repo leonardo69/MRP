@@ -126,11 +126,11 @@
     <Compile Include="GUI\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\LotSizeComponent.cs">
+    <Compile Include="GUI\EditComponents.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\LotSizeComponent.Designer.cs">
-      <DependentUpon>LotSizeComponent.cs</DependentUpon>
+    <Compile Include="GUI\EditComponents.Designer.cs">
+      <DependentUpon>EditComponents.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\MainForm.cs">
       <SubType>Form</SubType>
@@ -155,18 +155,6 @@
     </Compile>
     <Compile Include="GUI\Order.Designer.cs">
       <DependentUpon>Order.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Store.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Store.Designer.cs">
-      <DependentUpon>Store.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\TimeProduction.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\TimeProduction.Designer.cs">
-      <DependentUpon>TimeProduction.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Users.cs">
       <SubType>Form</SubType>
@@ -205,8 +193,8 @@
     <EmbeddedResource Include="GUI\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\LotSizeComponent.resx">
-      <DependentUpon>LotSizeComponent.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\EditComponents.resx">
+      <DependentUpon>EditComponents.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -219,12 +207,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Order.resx">
       <DependentUpon>Order.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Store.resx">
-      <DependentUpon>Store.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\TimeProduction.resx">
-      <DependentUpon>TimeProduction.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Users.resx">
       <DependentUpon>Users.cs</DependentUpon>

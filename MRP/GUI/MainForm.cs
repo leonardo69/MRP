@@ -11,9 +11,9 @@ namespace MRP.GUI
         {
             InitializeComponent();
             ribbonTab1.IsSelected = true;
-            var creator = new DatabaseCreator();
-            creator.CreateUsers();
-            creator.CreateComponents();
+            //var creator = new DatabaseCreator();
+            //creator.CreateUsers();
+            //creator.CreateComponents();
             setPermissionsForManager("RootManager");
         }
 
@@ -34,17 +34,15 @@ namespace MRP.GUI
 
         private void radButtonElement6_Click(object sender, EventArgs e)
         {
-            new Store().Show();
         }
 
         private void radButtonElement7_Click(object sender, EventArgs e)
         {
-            new TimeProduction().Show();
         }
 
         private void radButtonElement8_Click(object sender, EventArgs e)
         {
-            new LotSizeComponent().Show();
+            new EditComponents().Show();
         }
 
         private void radButtonElement5_Click(object sender, EventArgs e)
@@ -67,24 +65,9 @@ namespace MRP.GUI
             new About().Show();
         }
 
-        /// <summary>
-        /// Store
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void radButtonElement13_Click(object sender, EventArgs e)
-        {
-            new Store().Show();
-        }
-
         private void radButtonElement14_Click(object sender, EventArgs e)
         {
-            new TimeProduction().Show();
-        }
-
-        private void radButtonElement15_Click(object sender, EventArgs e)
-        {
-            new LotSizeComponent().Show();
+            new EditComponents().Show();
         }
 
         private void radButtonElement16_Click(object sender, EventArgs e)

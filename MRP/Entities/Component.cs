@@ -19,6 +19,10 @@ namespace MRP.Entities
         /// </summary>
         public int? CountInStore { get; set; }
         /// <summary>
+        /// Время выполнения заказа
+        /// </summary>
+        public int? ExecutionTime { get; set; }
+        /// <summary>
         /// Объём партии
         /// </summary>
         public string Volume { get; set; }

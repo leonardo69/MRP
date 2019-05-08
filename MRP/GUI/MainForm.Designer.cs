@@ -42,9 +42,7 @@
             this.radButtonElement3 = new Telerik.WinControls.UI.RadButtonElement();
             this.radRibbonBarGroup8 = new Telerik.WinControls.UI.RadRibbonBarGroup();
             this.radButtonElement12 = new Telerik.WinControls.UI.RadButtonElement();
-            this.radButtonElement13 = new Telerik.WinControls.UI.RadButtonElement();
             this.radButtonElement14 = new Telerik.WinControls.UI.RadButtonElement();
-            this.radButtonElement15 = new Telerik.WinControls.UI.RadButtonElement();
             this.radRibbonBarGroup9 = new Telerik.WinControls.UI.RadRibbonBarGroup();
             this.radButtonElement16 = new Telerik.WinControls.UI.RadButtonElement();
             this.ribbonTab5 = new Telerik.WinControls.UI.RibbonTab();
@@ -225,9 +223,7 @@
             // 
             this.radRibbonBarGroup8.Items.AddRange(new Telerik.WinControls.RadItem[] {
             this.radButtonElement12,
-            this.radButtonElement13,
-            this.radButtonElement14,
-            this.radButtonElement15});
+            this.radButtonElement14});
             this.radRibbonBarGroup8.Name = "radRibbonBarGroup8";
             this.radRibbonBarGroup8.Text = "Планирование";
             // 
@@ -242,17 +238,6 @@
             this.radButtonElement12.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             this.radButtonElement12.Click += new System.EventHandler(this.radButtonElement12_Click);
             // 
-            // radButtonElement13
-            // 
-            this.radButtonElement13.AutoSize = false;
-            this.radButtonElement13.Bounds = new System.Drawing.Rectangle(0, 0, 76, 76);
-            this.radButtonElement13.Image = ((System.Drawing.Image)(resources.GetObject("radButtonElement13.Image")));
-            this.radButtonElement13.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radButtonElement13.Name = "radButtonElement13";
-            this.radButtonElement13.Text = "Склад";
-            this.radButtonElement13.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
-            this.radButtonElement13.Click += new System.EventHandler(this.radButtonElement13_Click);
-            // 
             // radButtonElement14
             // 
             this.radButtonElement14.AutoSize = false;
@@ -260,20 +245,9 @@
             this.radButtonElement14.Image = ((System.Drawing.Image)(resources.GetObject("radButtonElement14.Image")));
             this.radButtonElement14.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.radButtonElement14.Name = "radButtonElement14";
-            this.radButtonElement14.Text = "Время";
+            this.radButtonElement14.Text = "Компоненты";
             this.radButtonElement14.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             this.radButtonElement14.Click += new System.EventHandler(this.radButtonElement14_Click);
-            // 
-            // radButtonElement15
-            // 
-            this.radButtonElement15.AutoSize = false;
-            this.radButtonElement15.Bounds = new System.Drawing.Rectangle(0, 0, 76, 76);
-            this.radButtonElement15.Image = ((System.Drawing.Image)(resources.GetObject("radButtonElement15.Image")));
-            this.radButtonElement15.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radButtonElement15.Name = "radButtonElement15";
-            this.radButtonElement15.Text = "Объём";
-            this.radButtonElement15.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
-            this.radButtonElement15.Click += new System.EventHandler(this.radButtonElement15_Click);
             // 
             // radRibbonBarGroup9
             // 
@@ -671,9 +645,7 @@
         private Telerik.WinControls.UI.RadButtonElement radButtonElement11;
         private Telerik.WinControls.UI.RadRibbonBarGroup radRibbonBarGroup8;
         private Telerik.WinControls.UI.RadButtonElement radButtonElement12;
-        private Telerik.WinControls.UI.RadButtonElement radButtonElement13;
         private Telerik.WinControls.UI.RadButtonElement radButtonElement14;
-        private Telerik.WinControls.UI.RadButtonElement radButtonElement15;
         private Telerik.WinControls.UI.RadRibbonBarGroup radRibbonBarGroup9;
         private Telerik.WinControls.UI.RadButtonElement radButtonElement16;
         private Telerik.WinControls.UI.RibbonTab ribbonTab6;

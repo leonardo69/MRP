@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using Kurswork.Model;
 using MRP.Core;
 
 namespace MRP.Model

@@ -149,7 +149,7 @@ namespace MRP.GUI
         {
             using (var db = new DataContext())
             {
-                var specification = new Entities.Assembly
+                var specification = new Assembly
                 {
                     Name = name
                 };
@@ -167,6 +167,11 @@ namespace MRP.GUI
                 specification.StartComponent = rootComponent;
 
                 db.Entry(specification).State = EntityState.Modified;
+                db.SaveChanges();
+
+                var mainPlan = new MainPlan {Assembly = specification};
+
+                db.MainPlans.Add(mainPlan);
                 db.SaveChanges();
             }
         }
