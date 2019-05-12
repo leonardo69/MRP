@@ -21,7 +21,7 @@ namespace MRP.GUI
         {
             using (var db = new DataContext())
             {
-                var assemblies = db.Specifications.ToList();
+                var assemblies = db.Assemblies.ToList();
                 if (assemblies.Count <= 0) return;
 
                 foreach (var x in assemblies)

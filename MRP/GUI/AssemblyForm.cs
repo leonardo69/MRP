@@ -23,7 +23,7 @@ namespace MRP.GUI
         {
             using (var db = new DataContext())
             {
-                var assemblies = db.Specifications.Include(x => x.StartComponent).ToList();
+                var assemblies = db.Assemblies.Include(x => x.StartComponent).ToList();
                 if (assemblies.Count > 0)
                     foreach (var x in assemblies)
                     {
@@ -132,7 +132,7 @@ namespace MRP.GUI
         }
 
 
-        private void DeleteAssembly_Click(object sender, EventArgs e)
+        private void AddAssemblyBtn_Click(object sender, EventArgs e)
         {
             var addAssemblyForm = new AddAssemblyForm();
             addAssemblyForm.OnAddNewAssembly += (sender1, e1) =>
@@ -154,7 +154,7 @@ namespace MRP.GUI
                     Name = name
                 };
 
-                db.Specifications.Add(specification);
+                db.Assemblies.Add(specification);
                 db.SaveChanges();
 
                 var rootComponent = new Component
@@ -177,7 +177,7 @@ namespace MRP.GUI
         }
 
 
-        private void Assembly_SelectedIndexChanged(object sender, EventArgs e)
+        private void AssembliesList_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (listView1.SelectedItems.Count <= 0) return;
 
@@ -186,6 +186,36 @@ namespace MRP.GUI
             _selectedRootComponentId = selectedAssembly.RootComponentId;
             ClearTree();
             CreateTree();
+        }
+
+        private void AssemblyForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radTreeView1_SelectedNodeChanged(object sender, RadTreeViewEventArgs e)
+        {
+
+            var component = (Component)e.Node?.Value;
+            if (component == null)
+            {
+                radLabel4.Text = "";
+                radLabel5.Text = "";
+                radLabel6.Text = "";
+                return;
+            }
+
+            radLabel4.Text = component.ExecutionTime.ToString();
+            radLabel5.Text = component.CountInStore.ToString();
+            radLabel6.Text = component.Volume;
+        }
+
+        private void DeleteAssemblyBtn_Click(object sender, EventArgs e)
+        {
+            //delete start component with all children
+            //delete assembly
+            //reload assemblies list
+
         }
     }
 

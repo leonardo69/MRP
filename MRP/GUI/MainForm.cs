@@ -163,13 +163,7 @@ namespace MRP.GUI
             radMenuItem14.Visibility = ElementVisibility.Collapsed;
         }
 
-        private void radButtonElement11_Click(object sender, EventArgs e)
-        {
-            // logout
-            //hide all tabs except about and authorization
-            //hide start menu tabs
-            resetUserPermission();
-        }
+        private void radButtonElement11_Click(object sender, EventArgs e) => resetUserPermission();
 
         private void radButtonElement17_Click(object sender, EventArgs e)
         {

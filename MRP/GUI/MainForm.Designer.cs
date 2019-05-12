@@ -149,7 +149,7 @@
             // 
             this.ribbonTab1.EnableHighlight = true;
             this.ribbonTab1.IsPinned = false;
-            this.ribbonTab1.IsSelected = false;
+            this.ribbonTab1.IsSelected = true;
             this.ribbonTab1.Items.AddRange(new Telerik.WinControls.RadItem[] {
             this.radRibbonBarGroup1});
             this.ribbonTab1.Name = "ribbonTab1";
@@ -185,13 +185,13 @@
             this.radButtonElement11.Image = ((System.Drawing.Image)(resources.GetObject("radButtonElement11.Image")));
             this.radButtonElement11.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.radButtonElement11.Name = "radButtonElement11";
-            this.radButtonElement11.Text = "Выйти";
+            this.radButtonElement11.Text = "Сменить";
             this.radButtonElement11.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             this.radButtonElement11.Click += new System.EventHandler(this.radButtonElement11_Click);
             // 
             // ribbonTab2
             // 
-            this.ribbonTab2.IsSelected = true;
+            this.ribbonTab2.IsSelected = false;
             this.ribbonTab2.Items.AddRange(new Telerik.WinControls.RadItem[] {
             this.radRibbonBarGroup2,
             this.radRibbonBarGroup8,

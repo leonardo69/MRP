@@ -87,7 +87,6 @@
     <Compile Include="Admin\DeleteUser.Designer.cs">
       <DependentUpon>DeleteUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Core\DBAccess.cs" />
     <Compile Include="Core\Utils.cs" />
     <Compile Include="Entities\Component.cs" />
     <Compile Include="Entities\DatabaseCreator.cs" />
@@ -156,12 +155,6 @@
     <Compile Include="GUI\Order.Designer.cs">
       <DependentUpon>Order.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Users.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Users.Designer.cs">
-      <DependentUpon>Users.cs</DependentUpon>
-    </Compile>
     <Compile Include="Model\ComponentPlanning.cs" />
     <Compile Include="Model\ComponentReport.cs" />
     <Compile Include="Model\Manager.cs" />
@@ -207,9 +200,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Order.resx">
       <DependentUpon>Order.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Users.resx">
-      <DependentUpon>Users.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

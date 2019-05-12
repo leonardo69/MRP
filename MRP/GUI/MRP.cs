@@ -1,35 +1,89 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
+using MRP.Entities;
 using MRP.Model;
+using Telerik.WinControls.UI;
 
 namespace MRP.GUI
 {
-    public partial class Mrp : Telerik.WinControls.UI.RadForm
+    public partial class Mrp : RadForm
     {
         private Manager _manager;
         private List<ComponentReport> _reportComponent;
+        private int? _selectedAssemblyId;
 
         public Mrp()
         {
             InitializeComponent();
+            LoadAssemblies();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void LoadAssemblies()
         {
-            //Грузим данные
-            _manager = new Manager();
-            _manager.LoadDataFromDb();
-            _manager.AnalyseData();
-            _reportComponent = _manager.MakeReport();
+            using (var db = new DataContext())
+            {
+                var assemblies = db.Assemblies.ToList();
+                if (assemblies.Count <= 0) return;
 
-            MessageBox.Show(@"Вычисления завершены. Выберите компонент для производства");
-            comboBox1.Enabled = true;
+                foreach (var x in assemblies)
+                {
+                    assemblyList.Items.Add(new RadListDataItem
+                    {
+                        Text = x.Name,
+                        Tag = new SelectedAssembly
+                        {
+                            AssemblyId = x.Id
+                        }
+                    });
+                }
+            }
+        }
+  
 
-            //Догружаем выборку в combobox
-            foreach (var report in _reportComponent) comboBox1.Items.Add(report.NameComponent);
+        private void ClearResults()
+        {
+            textBox1.Clear();
+            textBox2.Clear();
+            textBox4.Clear();
+            comboBox1.Items.Clear();
+            comboBox1.Enabled = false;
+            dataGridView1.DataSource = null;
+            comboBox1.SelectedIndexChanged -= comboBox1_SelectedIndexChanged;
+        }
 
-            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+        private void AnalyzeBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!_selectedAssemblyId.HasValue)
+                {
+                    MessageBox.Show(@"Выберите сборку");
+                    return;
+                }
+
+                _manager = new Manager();
+                _manager.LoadAssemblyStructureFromDb(_selectedAssemblyId.Value);
+                _manager.AnalyseData();
+                _reportComponent = _manager.MakeReport();
+
+                MessageBox.Show(@"Вычисления завершены. Выберите компонент для производства");
+                comboBox1.Enabled = true;
+
+                comboBox1.Items.Clear();
+                foreach (var report in _reportComponent)
+                {
+                    comboBox1.Items.Add(report.NameComponent);
+                }
+
+                comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(@"Ошибка: "+exception.Message);
+            }
+        
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -66,8 +120,19 @@ namespace MRP.GUI
             textBox4.Text = _reportComponent[comboBox1.SelectedIndex].LotSize;
         }
 
-        private void MRP_Load(object sender, EventArgs e)
+        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
+
+        }
+
+        private void assemblyList_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
+        {
+            if (assemblyList.SelectedItems.Count <= 0) return;
+
+            var selectedAssembly = (SelectedAssembly)assemblyList.SelectedItems[0].Tag;
+            _selectedAssemblyId = selectedAssembly.AssemblyId;
+
+            ClearResults();
         }
     }
 }

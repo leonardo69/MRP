@@ -19,7 +19,7 @@ namespace MRP.Model
                     Results = GetResultsInTable(component),
                     AvailableBalance = component.StartAvailableBalance.ToString(),
                     LeadTime = component.LeadTime.ToString(),
-                    NameComponent = component.NameComponent,
+                    NameComponent = component.ComponentName,
                     LotSize = component.LotSize
                 };
 

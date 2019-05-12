@@ -10,7 +10,7 @@ namespace MRP.Entities
 
         public DbSet<Component> Components { get; set; }
 
-        public DbSet<Assembly> Specifications { get; set; }
+        public DbSet<Assembly> Assemblies { get; set; }
 
         public DbSet<Order> Orders { get; set; }
 

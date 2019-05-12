@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 using MRP.GUI;
 
-namespace Kurswork
+namespace MRP
 {
     static class Program
     {

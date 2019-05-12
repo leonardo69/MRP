@@ -2,12 +2,10 @@
 
 namespace MRP.Model
 {
-    class ComponentPlanning
+    public class ComponentPlanning
     {
-        public string NameComponent { get; set;}
+        public string ComponentName { get; set;}
 
-
-        //MRP требование
         public string LotSize { get; set;}
 
         public int LeadTime { get; set; }
@@ -16,8 +14,9 @@ namespace MRP.Model
 
         public List<WeekPlan> Weeks { get; set; }
 
-        //структура
-        public ComponentPlanning ComponentParent { get; set; }
+        public ComponentPlanning Parent { get; set; }
+
+        public List<ComponentPlanning> Children { get; set; }
 
         public bool IsMain { get; set;}
 
@@ -25,17 +24,24 @@ namespace MRP.Model
         public ComponentPlanning(string componentName)
         {
             Weeks = new List<WeekPlan>();
-            for (int i = 0; i < 9; i++)
+            Children = new List<ComponentPlanning>();
+            for (var i = 0; i < 9; i++)
             { Weeks.Add(new WeekPlan()); }
 
-            NameComponent = componentName;
+            ComponentName = componentName;
+        }
+
+        public void SetupGrossRequirements()
+        {
+            for (var i = 0; i < 9; i++)
+            {
+                Weeks[i].GrossRequirements = Parent.Weeks[i].PlannedOrderReleases;
+            }
         }
 
 
-        internal void MakeCalculation()
+        public void MakeCalculation()
         {
-
-            //cчитаем первую неделю
             if (StartAvailableBalance >= Weeks[0].GrossRequirements)
             {
                 Weeks[0].AvailableBalance = StartAvailableBalance - Weeks[0].GrossRequirements;
@@ -45,8 +51,7 @@ namespace MRP.Model
                 Weeks[0].AvailableBalance = 0;
             }
 
-            //считаем последующие недели
-            for(int i=1;i<9;i++)
+            for(var i=1;i<9;i++)
             {
                 if (Weeks[i-1].AvailableBalance >= Weeks[i].GrossRequirements)
                 {
@@ -57,14 +62,10 @@ namespace MRP.Model
                     Weeks[i].PlannedOrderReceipts = Weeks[i].GrossRequirements - Weeks[i - 1].AvailableBalance;
                     Weeks[i].AvailableBalance = 0;
                 }
-
             }
 
-            //делаем перенос времени выполнения заказа по MRP
-
-            for (int i=0; i< 9;i++)
+            for (var i=0; i< 9;i++)
             {
-                //проверить на вшивость
                 if(Weeks[i].PlannedOrderReceipts!=0)
                 {
                     if (i - LeadTime >= 0)

@@ -2,7 +2,7 @@
 
 namespace MRP.Model
 {
-    class ComponentReport
+    public class ComponentReport
     {
         public DataTable Results;
 

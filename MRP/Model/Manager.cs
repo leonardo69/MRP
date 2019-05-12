@@ -1,103 +1,141 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Diagnostics;
+using System.Linq;
+using System.Windows.Forms;
 using MRP.Core;
+using MRP.Entities;
 
 namespace MRP.Model
 {
-    internal class Manager
+    public class Manager
     {
-        private ComponentPlanning _componentA;
-        private ComponentPlanning _componentB;
-        private ComponentPlanning _componentC;
-        private ComponentPlanning _componentD;
+
+        private List<ComponentPlanning> components = new List<ComponentPlanning>();
+        private Component _rootComponentEntity;
 
 
-        public void LoadDataFromDb()
+        public void LoadAssemblyStructureFromDb(int assemblyId)
         {
-            _componentA = new ComponentPlanning("Душевая кабина");
-            _componentB = new ComponentPlanning("Каркас со стенками");
-            _componentC = new ComponentPlanning("Ручной душ");
-            _componentD = new ComponentPlanning("Смеситель");
+            using (var db = new DataContext())
+            {
+                var allComponents = db.Components.Include(x => x.Children.Select(
+                    y => y.Children.Select(
+                        z => z.Children.Select(
+                            e => e.Children.Select(p => p.Children)))
+                )).Where(x => x.AssemblyId == assemblyId).ToList();
 
-            _componentA.IsMain = true;
+                _rootComponentEntity = allComponents.FirstOrDefault(x => x.Parent == null);
 
-            _componentB.IsMain = false;
-            _componentB.ComponentParent = _componentA;
 
-            _componentC.IsMain = false;
-            _componentC.ComponentParent = _componentA;
+                Utils.TraverseEntityComponents(_rootComponentEntity, component =>
+                {
+                    if (!component.ExecutionTime.HasValue || !component.CountInStore.HasValue ||
+                        string.IsNullOrEmpty(component.Volume))
+                    {
+                        throw new Exception("Проверьте компонент: "+component.Name);
+                    }
 
-            _componentD.IsMain = false;
-            _componentD.ComponentParent = _componentC;
 
-            InitMainPlan(_componentA);
-            InitStore(_componentA, _componentB, _componentC, _componentD);
-            InitLeadTime(_componentA, _componentB, _componentC, _componentD);
-            InitLotSize(_componentA, _componentB, _componentC, _componentD);
+                    var componentPlanning = new ComponentPlanning(component.Name)
+                    {
+                        IsMain = component.Parent == null,
+                        LeadTime = component.ExecutionTime ?? 0,
+                        LotSize = component.Volume,
+                        ComponentName = component.Name,
+                        StartAvailableBalance = component.CountInStore ?? 0
+                    };
+                    components.Add(componentPlanning);
+                });
+
+                //add links
+                foreach (var component in allComponents)
+                {
+                    if (component.Parent == null) continue;
+
+                    var parentName = component.Parent.Name;
+                    var currentComponent = components.FirstOrDefault(x => x.ComponentName == component.Name);
+                    var parentComponent = components.FirstOrDefault(x => x.ComponentName == parentName);
+                    if (currentComponent != null)
+                    {
+                        currentComponent.Parent = parentComponent;
+                    }
+                    else
+                    {
+                        MessageBox.Show(@"Component not found");
+                    }
+                }
+
+                var rootComponent = components.FirstOrDefault(x => x.Parent == null);
+
+                InitAssemblyPlan(rootComponent, assemblyId);
+            }
         }
 
-        private void InitLotSize(params ComponentPlanning[] components)
+        private void InitAssemblyPlan(ComponentPlanning rootComponent, int assemblyId)
         {
-            var loadLotSize = "SELECT Объём_партии.Обозначение FROM Объём_партии;";
-            var table = DbAccess.ExecuteDataTable(loadLotSize);
+            using (var db = new DataContext())
+            {
+                var plan = db.MainPlans.Include(x => x.Assembly).FirstOrDefault(x => x.Assembly.Id == assemblyId);
+                if (plan == null) return;
 
-            for (var i = 0; i < 4; i++)
-                components[i].LotSize = table.Rows[i][0].ToString();
+                rootComponent.Weeks[0].GrossRequirements = plan.Week1;
+                rootComponent.Weeks[1].GrossRequirements = plan.Week2;
+                rootComponent.Weeks[2].GrossRequirements = plan.Week3;
+                rootComponent.Weeks[3].GrossRequirements = plan.Week4;
+                rootComponent.Weeks[4].GrossRequirements = plan.Week5;
+                rootComponent.Weeks[5].GrossRequirements = plan.Week6;
+                rootComponent.Weeks[6].GrossRequirements = plan.Week7;
+                rootComponent.Weeks[7].GrossRequirements = plan.Week8;
+                rootComponent.Weeks[8].GrossRequirements = plan.Week9;
+            }
         }
-
-        private void InitLeadTime(params ComponentPlanning[] components)
-        {
-            var loadLeadTime = "SELECT Время_выполнения_заказа.Время FROM Время_выполнения_заказа;";
-            var table = DbAccess.ExecuteDataTable(loadLeadTime);
-
-            for (var i = 0; i < 4; i++)
-                components[i].LeadTime = int.Parse(table.Rows[i][0].ToString());
-        }
-
-        private void InitStore(params ComponentPlanning[] components)
-        {
-            var loadStoreData = "SELECT Склад.Кол_компонента FROM Склад;";
-            var table = DbAccess.ExecuteDataTable(loadStoreData);
-            for (var i = 0; i < 4; i++)
-                components[i].StartAvailableBalance = int.Parse(table.Rows[i][0].ToString());
-        }
-
-
-        private void InitMainPlan(ComponentPlanning componentA)
-        {
-            var mainPlanQuery =
-                "SELECT Глав_производ_план.Неделя1, Глав_производ_план.Неделя2, Глав_производ_план.Неделя3, Глав_производ_план.Неделя4, "
-                + "Глав_производ_план.Неделя5, Глав_производ_план.Неделя6, Глав_производ_план.Неделя7, Глав_производ_план.Неделя8, Глав_производ_план.Неделя9 "
-                + "FROM Глав_производ_план WHERE (((Глав_производ_план.ID_компонента)=1));";
-            var table = DbAccess.ExecuteDataTable(mainPlanQuery);
-
-            for (var i = 0; i < 9; i++) componentA.Weeks[i].GrossRequirements = int.Parse(table.Rows[0][i].ToString());
-        }
-
 
         public void AnalyseData()
         {
-            _componentA.MakeCalculation();
-            SetupGrossRequirements(_componentB);
-            _componentB.MakeCalculation();
-            SetupGrossRequirements(_componentC);
-            _componentC.MakeCalculation();
-            SetupGrossRequirements(_componentD);
-            _componentD.MakeCalculation();
+
+            var rootComponent = components.FirstOrDefault(x => x.Parent == null);
+            
+            if (rootComponent == null)
+            {
+                Debug.WriteLine("AnalyseData. Root component (ComponentPlanning) is null ");
+            }
+            else
+            {
+                rootComponent.MakeCalculation();
+            }
+
+            Utils.TraverseEntityComponents(_rootComponentEntity, currentComponent =>
+            {
+                if (currentComponent.Parent == null)
+                {
+                    Debug.WriteLine("Component parent is null");
+                    return;
+                }
+
+                var componentPlanning = components.FirstOrDefault(x => x.ComponentName == currentComponent.Name);
+                if (componentPlanning != null)
+                {
+                    componentPlanning.SetupGrossRequirements();
+                    componentPlanning.MakeCalculation();
+                }
+                else
+                {
+                    Debug.WriteLine("AnalyseData.Component Planning for calculation not found");
+                }
+            });
+   
         }
 
         public List<ComponentReport> MakeReport()
         {
-            var comps = new List<ComponentPlanning> {_componentA, _componentB, _componentC, _componentD};
             var report = new Report();
-            var results = report.GetReport(comps);
+            var results = report.GetReport(components);
 
             return results;
         }
 
-        private void SetupGrossRequirements(ComponentPlanning component)
-        {
-            var parent = component.ComponentParent;
-            for (var i = 0; i < 9; i++) component.Weeks[i].GrossRequirements = parent.Weeks[i].PlannedOrderReleases;
-        }
+    
     }
 }

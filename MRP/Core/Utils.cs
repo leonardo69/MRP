@@ -1,5 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using MRP.Entities;
+using MRP.Model;
 
 namespace MRP.Core
 {
@@ -21,5 +24,38 @@ namespace MRP.Core
                 TraverseTree(child,components);
             }
         }
+
+        public static void TraverseEntityComponents(Component component, Action<Component> action)
+        {
+            action(component);
+            if (component.Children == null) return;
+            foreach (var child in component.Children)
+            {
+                TraverseEntityComponents(child, action);
+            }
+        }
+
+        public static void TraverseComponentTree(ComponentPlanning component, Action<ComponentPlanning> action)
+        {
+            action(component);
+            if (component.Children == null) return;
+            
+                foreach (var child in component.Children)
+                {
+                    TraverseComponentTree(child, action);
+                }
+            
+        }
+
+        public static List<Component> GetChildrenComponents(Component component)
+        {
+            return component.Children.ToList();
+        }
+
+        public static Component FindComponentByName(List<Component> components, string name)
+        {
+            return components.FirstOrDefault(x => x.Name == name);
+        }
+
     }
 }
